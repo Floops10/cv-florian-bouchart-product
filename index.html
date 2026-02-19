@@ -31,49 +31,45 @@
             --pink: #ff006e;
             --yellow: #ffbe0b;
             
-            /* --- THÈME MIDNIGHT PRO (Modifié) --- */
-            --bg-primary: #020617; /* Slate 950 - Bleu nuit profond */
+            /* --- THÈME MIDNIGHT PRO --- */
+            --bg-primary: #020617; /* Slate 950 */
             --bg-secondary: #0f172a; /* Slate 900 */
             
-            /* Effets de transparence (Glassmorphism - Adapté au bleu nuit) */
-            --glass-bg: rgba(30, 41, 59, 0.6); /* Slate 800 avec transparence */
+            /* Effets de transparence */
+            --glass-bg: rgba(30, 41, 59, 0.6); 
             --glass-border: rgba(255, 255, 255, 0.08);
             
-            /* Bordures colorées par défaut pour le style Cyber */
+            /* Bordures */
             --card-border: rgba(255, 107, 53, 0.2);
             
             /* Modales & Dock */
-            --modal-bg: rgba(2, 6, 23, 0.95); /* Slate 950 presque opaque */
-            --dock-bg: rgba(15, 23, 42, 0.8); /* Slate 900 */
+            --modal-bg: rgba(2, 6, 23, 0.95);
+            --dock-bg: rgba(15, 23, 42, 0.8);
             --dock-border: rgba(255, 255, 255, 0.1);
             
             /* Typographie */
             --text-primary: #ffffff;
-            --text-secondary: #94a3b8; /* Slate 400 - Plus doux sur bleu nuit */
+            --text-secondary: #94a3b8;
             
-            /* Fonts Families */
+            /* Fonts */
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
-        /* --- THÈME CLAIR (MODE SOBRE / ENTREPRISE) --- */
+        /* --- THÈME CLAIR (MODE SOBRE) --- */
         body.sober-mode {
-            /* Fond gris très clair "Papier" */
             --bg-primary: #f2f2f7;
             --bg-secondary: #ffffff;
             
-            /* Cartes blanches et propres */
             --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(0, 0, 0, 0.05);
             --card-border: rgba(0, 0, 0, 0.08);
             
             --modal-bg: rgba(255, 255, 255, 0.98);
             
-            /* Texte sombre lisible */
             --text-primary: #1d1d1f;
             --text-secondary: #515155;
             
-            /* Dock clair */
             --dock-bg: rgba(255, 255, 255, 0.9);
             --dock-border: rgba(0, 0, 0, 0.1);
         }
@@ -83,16 +79,15 @@
             color: var(--text-primary);
             font-family: var(--font-body);
             line-height: 1.6;
-            overflow-x: hidden; /* Évite le scroll horizontal */
-            padding-bottom: 140px; /* Marge pour le Dock en bas */
+            overflow-x: hidden;
+            padding-bottom: 140px;
             transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         /* ==========================================================================
-           2. EFFETS D'ARRIÈRE-PLAN (PARTICULES & LUMIÈRES)
+           2. EFFETS D'ARRIÈRE-PLAN
            ========================================================================== */
         
-        /* Grille futuriste en fond */
         .grid-background {
             position: fixed;
             inset: 0;
@@ -104,7 +99,6 @@
             pointer-events: none;
         }
 
-        /* Halo lumineux qui suit la souris */
         .cursor-glow {
             position: fixed;
             width: 700px;
@@ -124,11 +118,8 @@
             mix-blend-mode: screen;
         }
         
-        .cursor-glow.active {
-            opacity: 1;
-        }
+        .cursor-glow.active { opacity: 1; }
 
-        /* Orbes flottantes colorées */
         .orb {
             position: fixed;
             border-radius: 50%;
@@ -172,7 +163,6 @@
             66% { transform: translate(-20px, 20px) scale(0.95) rotate(-5deg); }
         }
 
-        /* Conteneur principal centré */
         .container {
             position: relative;
             z-index: 10;
@@ -182,7 +172,7 @@
         }
 
         /* ==========================================================================
-           3. HERO SECTION (L'ACCUEIL)
+           3. HERO SECTION
            ========================================================================== */
         
         .hero {
@@ -196,11 +186,10 @@
 
         .hero-content {
             text-align: center;
-            max-width: 950px; /* Légèrement élargi pour le nouveau titre */
+            max-width: 950px;
             width: 100%;
         }
 
-        /* Image de profil avec animation Pulse */
         .profile-image-wrapper {
             margin-bottom: 2rem;
             display: flex;
@@ -236,10 +225,9 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* Titre Principal */
         .hero-title {
             font-family: var(--font-display);
-            font-size: clamp(1.5rem, 3vw, 2rem); /* Ajusté pour le job title */
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1rem;
@@ -253,14 +241,6 @@
             background-clip: text;
             display: inline-block;
             filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.4));
-        }
-
-        /* Sous-titre & Description */
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 300;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
         }
 
         .hero-description {
@@ -277,7 +257,6 @@
             text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);
         }
 
-        /* --- BOUTONS HERO (AVEC L'ANIMATION CERCLE V1) --- */
         .cta-container {
             display: flex;
             gap: 1.5rem;
@@ -296,14 +275,11 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-family: var(--font-display);
-            
-            /* Propriétés vitales pour l'animation cercle */
             position: relative;
             overflow: hidden; 
             z-index: 1;
         }
 
-        /* L'Animation "Cercle qui grandit" au survol */
         .btn::before {
             content: '';
             position: absolute;
@@ -323,7 +299,6 @@
             height: 500px;
         }
 
-        /* Bouton Primaire (Dégradé) */
         .btn-primary {
             background: linear-gradient(135deg, var(--orange), var(--pink));
             color: white;
@@ -335,7 +310,6 @@
             box-shadow: 0 15px 50px rgba(255, 107, 53, 0.7);
         }
 
-        /* Bouton Secondaire (Outline) */
         .btn-secondary {
             background: transparent;
             color: var(--text-primary);
@@ -349,7 +323,6 @@
             box-shadow: 0 10px 40px rgba(0, 212, 170, 0.2);
         }
 
-        /* Indicateur de Scroll (Flèche bas) */
         .scroll-down {
             position: absolute;
             bottom: 40px;
@@ -361,6 +334,7 @@
             opacity: 0.7;
             transition: color 0.3s;
         }
+        
         .scroll-down:hover {
             color: var(--orange);
             opacity: 1;
@@ -373,7 +347,7 @@
         }
 
         /* ==========================================================================
-           4. STRUCTURE GÉNÉRALE DES SECTIONS
+           4. SECTIONS & GRILLES
            ========================================================================== */
         
         section {
@@ -398,9 +372,6 @@
             font-size: clamp(1.1rem, 2vw, 1.4rem);
             color: var(--text-secondary);
         }
-
-        /* --- GRILLES (Layout Adaptatif) --- */
-        /* Sur mobile : 1 colonne. Sur PC : 2, 3 ou 4 colonnes selon la section */
         
         .experience-grid, 
         .vision-grid, 
@@ -409,10 +380,9 @@
             gap: 2rem;
             max-width: 1400px;
             margin: 0 auto;
-            grid-template-columns: 1fr; /* Mobile First */
+            grid-template-columns: 1fr;
         }
 
-        /* Tablette (min 768px) */
         @media (min-width: 768px) {
             .experience-grid, 
             .vision-grid, 
@@ -420,8 +390,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        /* Desktop (min 1200px) */
+        
         @media (min-width: 1200px) {
             .experience-grid { grid-template-columns: repeat(3, 1fr); }
             .vision-grid { grid-template-columns: repeat(4, 1fr); }
@@ -429,7 +398,7 @@
         }
 
         /* ==========================================================================
-           5. CARDS (DESIGN GLASSMORPHISM)
+           5. CARDS
            ========================================================================== */
         
         .card-glass {
@@ -445,7 +414,6 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
-        /* Effet de survol : La carte monte et s'allume (Pour Parcours & Vision) */
         .experience-card:hover, 
         .vision-card:hover, 
         .skill-category:hover {
@@ -455,7 +423,7 @@
             background: rgba(30, 30, 30, 0.01);
         }
 
-        /* --- DÉTAILS EXPÉRIENCES --- */
+        /* EXP */
         .exp-header {
             display: flex;
             align-items: flex-start;
@@ -472,10 +440,10 @@
             justify-content: center;
             flex-shrink: 0;
             color: white;
-            background: #FFFFFF; /* Fond blanc pour assurer la visibilité des logos PNG */
+            background: #FFFFFF;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             overflow: hidden;
-            padding: 2px; /* Padding réduit pour ZOOMER sur le logo */
+            padding: 2px;
         }
         
         .exp-icon img {
@@ -484,12 +452,11 @@
             object-fit: contain;
         }
         
-        /* Fallback pour icônes sans image */
         .exp-icon.no-img {
             background: linear-gradient(135deg, #ff6b35, #f77f00); 
             padding: 0;
         }
-
+        
         .exp-info h3 {
             font-family: var(--font-display);
             font-size: 1.5rem;
@@ -539,7 +506,7 @@
             color: white;
         }
 
-        /* --- DÉTAILS VISION --- */
+        /* VISION */
         .vision-icon {
             width: 65px;
             height: 65px;
@@ -565,7 +532,7 @@
         }
 
         /* ==========================================================================
-           6. SECTION ATOUTS (AVEC MODAL POPUPS INTERACTIFS)
+           6. ATOUTS & MODALES
            ========================================================================== */
         
         .traits-container {
@@ -576,9 +543,13 @@
             gap: 2rem;
         }
 
-        /* Barres latérales de couleur */
-        .trait-card.strengths { border-left: 4px solid var(--teal); }
-        .trait-card.weaknesses { border-left: 4px solid var(--yellow); }
+        .trait-card.strengths {
+            border-left: 4px solid var(--teal);
+        }
+
+        .trait-card.weaknesses {
+            border-left: 4px solid var(--yellow);
+        }
 
         .trait-header {
             display: flex;
@@ -586,7 +557,7 @@
             gap: 1rem;
             margin-bottom: 2rem;
         }
-
+        
         .trait-badge {
             padding: 0.5rem 1.2rem;
             border-radius: 2rem;
@@ -595,25 +566,24 @@
             letter-spacing: 0.05em;
         }
 
-        .trait-badge.green { 
-            background: rgba(0, 212, 170, 0.15); 
-            color: var(--teal); 
-            border: 1px solid rgba(0, 212, 170, 0.3); 
-        }
-        
-        .trait-badge.amber { 
-            background: rgba(255, 190, 11, 0.15); 
-            color: var(--yellow); 
-            border: 1px solid rgba(255, 190, 11, 0.3); 
+        .trait-badge.green {
+            background: rgba(0, 212, 170, 0.15);
+            color: var(--teal);
+            border: 1px solid rgba(0, 212, 170, 0.3);
         }
 
+        .trait-badge.amber {
+            background: rgba(255, 190, 11, 0.15);
+            color: var(--yellow);
+            border: 1px solid rgba(255, 190, 11, 0.3);
+        }
+        
         .trait-list {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
-        /* Élément cliquable pour ouvrir la popup */
         .trait-item {
             display: flex;
             align-items: flex-start;
@@ -647,7 +617,7 @@
             line-height: 1.6;
         }
 
-        /* --- STYLE DES MODALES POPUP (LE DÉTAIL CACHÉ) --- */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -669,7 +639,7 @@
             opacity: 1;
             visibility: visible;
         }
-
+        
         .modal-content {
             background: var(--modal-bg);
             border: 1px solid var(--glass-border);
@@ -686,7 +656,7 @@
         .modal-overlay.active .modal-content {
             transform: translateY(0);
         }
-
+        
         .modal-close {
             position: absolute;
             top: 1.5rem;
@@ -709,7 +679,7 @@
             color: white;
             transform: rotate(90deg);
         }
-
+        
         .modal-title {
             font-family: var(--font-display);
             font-size: 2rem;
@@ -727,7 +697,7 @@
         }
 
         /* ==========================================================================
-           7. COMPÉTENCES
+           7. SKILLS & TIMELINE
            ========================================================================== */
         
         .skill-category h3 {
@@ -765,10 +735,7 @@
             box-shadow: 0 0 20px rgba(106, 76, 147, 0.5);
         }
 
-        /* ==========================================================================
-           8. FORMATION (TIMELINE) - FIX DU Z-INDEX
-           ========================================================================== */
-        
+        /* Timeline */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -789,7 +756,7 @@
             border-color: var(--purple);
             box-shadow: 0 0 40px rgba(106, 76, 147, 0.15);
         }
-
+        
         .timeline-header {
             padding: 1.5rem 2rem;
             display: flex;
@@ -804,7 +771,7 @@
         .timeline-header:hover {
             background: rgba(255, 255, 255, 0.03);
         }
-
+        
         .timeline-badge {
             width: 65px;
             height: 65px;
@@ -818,23 +785,22 @@
             color: white;
             flex-shrink: 0;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            background: white; /* Fond blanc par défaut pour les logos */
+            background: white;
             overflow: hidden;
-            padding: 2px; /* Padding réduit pour ZOOMER sur le logo */
+            padding: 2px;
         }
-        
+
         .timeline-badge img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
 
-        /* Style si pas d'image (juste icone) */
         .timeline-badge.no-logo {
-            background: linear-gradient(135deg, var(--teal), var(--purple)); /* Remis par JS */
+            background: linear-gradient(135deg, var(--teal), var(--purple));
             padding: 0;
         }
-
+        
         .timeline-info h3 {
             font-family: var(--font-display);
             font-weight: 700;
@@ -857,7 +823,7 @@
             font-weight: 700;
             font-size: 0.9rem;
         }
-
+        
         .timeline-content {
             max-height: 0;
             overflow: hidden;
@@ -865,25 +831,19 @@
         }
 
         .timeline-content.active {
-            max-height: 15000px; /* Grande valeur pour tout montrer sans coupure */
+            max-height: 15000px;
         }
 
         .timeline-body {
             padding: 0 2rem 2rem 2rem;
         }
-
-        /* GRILLE INTERNE FORMATION (Les cases) */
+        
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
-        /* --- STYLE DES CASES COURS - FIX Z-INDEX --- */
-        /* Note importante : Pour éviter le bug de Z-Index lors de l'empilement,
-           on ne fait PAS de transformation verticale (translateY) sur ces cases-là.
-           On joue uniquement sur la lumière et la bordure. */
-        
         .category-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -892,14 +852,13 @@
             transition: all 0.3s ease;
         }
 
-        /* AU SURVOL : LUMIÈRE UNIQUEMENT */
         .category-card:hover {
             border-color: var(--orange);
             background: rgba(255, 255, 255, 0.05);
             box-shadow: 0 0 30px rgba(255, 107, 53, 0.2);
-            transform: none; /* Bloque le mouvement pour éviter les bugs de superposition */
+            transform: none;
         }
-
+        
         .category-header {
             display: flex;
             align-items: center;
@@ -951,7 +910,7 @@
             border-bottom: none;
         }
 
-        /* --- BARRE DE RECHERCHE --- */
+        /* --- SEARCH --- */
         .search-container {
             max-width: 900px;
             margin: 0 auto 3rem;
@@ -1001,7 +960,7 @@
             font-weight: 700;
         }
 
-        /* --- SECTION ENGAGEMENT (NEW) --- */
+        /* --- ENGAGEMENT / AMBITION / FAQ / FOOTER / DOCK --- */
         .engagement-section {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -1032,11 +991,10 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* --- SECTION AMBITION (STYLE SPÉCIFIQUE) --- */
         .ambition-section {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
-            border-left: 5px solid var(--orange); /* Accent orange pour le côté Pilier/Force */
+            border-left: 5px solid var(--orange);
             border-radius: 2rem;
             padding: 3rem;
             max-width: 1200px;
@@ -1074,7 +1032,7 @@
             color: var(--text-primary);
             font-weight: 700;
         }
-
+        
         @media (min-width: 900px) {
             .ambition-section {
                 flex-direction: row;
@@ -1091,7 +1049,7 @@
                 padding-left: 2rem;
             }
         }
-        
+
         @media (max-width: 899px) {
             .ambition-header {
                 border-bottom: 1px solid var(--glass-border);
@@ -1103,270 +1061,6 @@
             }
         }
 
-
-        /* ==========================================================================
-           9. FOOTER
-           ========================================================================== */
-        
-        footer {
-            padding: 6rem 1rem;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-            margin-top: 6rem;
-            background: linear-gradient(to top, var(--bg-secondary), transparent);
-        }
-
-        footer h3 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
-        .copyright {
-            color: var(--text-secondary);
-            opacity: 0.6;
-        }
-
-        /* ==========================================================================
-           10. DOCK NAVIGATION (STYLE iOS / BUBBLE)
-           ========================================================================== */
-        
-        .dock-nav {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            
-            background: var(--dock-bg);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid var(--dock-border);
-            border-radius: 100px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-            
-            transition: all 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
-        }
-
-        .dock-nav:hover {
-            transform: translateX(-50%) scale(1.03);
-        }
-
-        .dock-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-        }
-
-        .dock-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            color: var(--text-primary);
-            transform: translateY(-15px) scale(1.2);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        .dock-item.active {
-            color: white;
-            background: linear-gradient(135deg, var(--orange), var(--pink));
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
-            transform: translateY(-5px);
-        }
-
-        .dock-item i {
-            width: 24px;
-            height: 24px;
-            transition: all 0.3s;
-        }
-
-        /* Tooltip au survol du dock */
-        .dock-item span {
-            position: absolute;
-            top: -45px;
-            background: rgba(0,0,0,0.9);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s;
-            pointer-events: none;
-            white-space: nowrap;
-            backdrop-filter: blur(5px);
-        }
-
-        .dock-item:hover span {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- CONTROL PANEL (TOP RIGHT) --- */
-        .controls-panel {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 100;
-            display: flex;
-            gap: 0.8rem;
-        }
-
-        .control-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.4rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 2rem;
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .control-btn:hover {
-            background: rgba(255, 107, 53, 0.15);
-            border-color: var(--orange);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
-        }
-
-        /* --- UTILS --- */
-        .hidden { display: none; }
-        
-        /* Animation d'apparition au scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- MEDIA QUERIES (RESPONSIVE) --- */
-        @media (max-width: 640px) {
-            .hero-title { font-size: 2.8rem; } /* Ajusté mobile pour le titre long */
-            .controls-panel { top: 1rem; right: 1rem; gap: 0.5rem; }
-            .control-btn span { display: none; }
-            .control-btn { padding: 0.8rem; }
-            
-            /* Dock adapté au mobile : padding réduit et taille adaptée pour 6 icônes */
-            .dock-nav { 
-                padding: 8px 10px; 
-                bottom: 20px; 
-                width: 95%; 
-                justify-content: space-between;
-            }
-            .dock-item { width: 42px; height: 42px; }
-            .dock-item span { display: none; } /* Pas de tooltip sur mobile */
-            
-            /* Timeline Header Mobile Fix */
-            .timeline-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-                padding: 1.5rem 1rem; /* Moins de padding latéral */
-            }
-            
-            /* Force les éléments internes à bien s'aligner */
-            .timeline-header > div:first-child {
-                width: 100%;
-                justify-content: flex-start;
-            }
-            
-            /* Le compteur et la flèche passent en dessous et prennent toute la largeur */
-            .timeline-header > div:last-child {
-                width: 100%;
-                justify-content: space-between;
-                margin-top: 0.5rem;
-            }
-            
-            .timeline-badge {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .timeline-info h3 {
-                font-size: 1.2rem;
-            }
-
-            /* --- CORRECTIF MOBILE (Largeur de contenu) --- */
-            .timeline-body {
-                padding: 0 0.5rem 1.5rem 0.5rem; /* Réduit énormément les marges latérales */
-            }
-            
-            .categories-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-        }
-
-        /* --- SOBRE MODE OVERRIDES (CLEAN DESIGN) --- */
-        body.sober-mode .orb, 
-        body.sober-mode .cursor-glow { 
-            display: none !important; 
-        }
-        
-        body.sober-mode .gradient-text {
-            background: none;
-            -webkit-text-fill-color: var(--text-primary);
-            color: var(--text-primary);
-            filter: none;
-        }
-        
-        body.sober-mode .profile-image {
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            background: white;
-            border-color: transparent;
-            animation: none;
-        }
-
-        body.sober-mode .btn-primary {
-            background: #1d1d1f;
-            color: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        body.sober-mode .category-card:hover {
-            transform: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            background: white;
-            border-color: rgba(0,0,0,0.1);
-        }
-
-        /* ==========================================================================
-           11. SECTION FAQ (NEW)
-           ========================================================================== */
-        
         .faq-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1375,7 +1069,6 @@
             margin: 0 auto;
         }
 
-        /* Sur PC, on met 2 colonnes, sauf si vous préférez une liste verticale pure */
         @media (min-width: 768px) {
             .faq-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1385,7 +1078,7 @@
         .faq-item {
             cursor: pointer;
             transition: all 0.3s ease;
-            padding: 0; /* On gère le padding dans le header/body pour l'animation */
+            padding: 0;
         }
 
         .faq-item:hover {
@@ -1431,20 +1124,225 @@
             padding-top: 1rem;
         }
 
-        /* État actif (ouvert) */
         .faq-item.active {
             border-color: var(--orange);
             background: rgba(255, 255, 255, 0.08);
         }
 
         .faq-item.active .faq-toggle-icon {
-            transform: rotate(45deg); /* Le + devient une croix */
+            transform: rotate(45deg);
             color: var(--orange);
         }
 
         .faq-item.active .faq-content {
-            max-height: 300px; /* Suffisant pour le texte */
+            max-height: 300px;
             transition: max-height 0.4s ease-in-out;
+        }
+
+        footer {
+            padding: 6rem 1rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 6rem;
+            background: linear-gradient(to top, var(--bg-secondary), transparent);
+        }
+
+        footer h3 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        .dock-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--dock-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--dock-border);
+            border-radius: 100px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            transition: all 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
+        }
+
+        .dock-nav:hover {
+            transform: translateX(-50%) scale(1.03);
+        }
+
+        .dock-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .dock-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--text-primary);
+            transform: translateY(-15px) scale(1.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .dock-item.active {
+            color: white;
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .dock-item i {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s;
+        }
+
+        .dock-item span {
+            position: absolute;
+            top: -45px;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+            backdrop-filter: blur(5px);
+        }
+
+        .dock-item:hover span {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .controls-panel {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .control-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.4rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 2rem;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: var(--orange);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+        }
+
+        .hidden { display: none; }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 640px) {
+            .hero-title { font-size: 2.8rem; }
+            .controls-panel { top: 1rem; right: 1rem; gap: 0.5rem; }
+            .control-btn span { display: none; }
+            .control-btn { padding: 0.8rem; }
+            
+            .dock-nav { 
+                padding: 8px 10px; 
+                bottom: 20px; 
+                width: 95%; 
+                justify-content: space-between;
+            }
+            .dock-item { width: 42px; height: 42px; }
+            .dock-item span { display: none; }
+            
+            .timeline-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 1.5rem 1rem;
+            }
+            
+            .timeline-header > div:first-child {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .timeline-header > div:last-child {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 0.5rem;
+            }
+            
+            .timeline-badge {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .timeline-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .timeline-body {
+                padding: 0 0.5rem 1.5rem 0.5rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -1491,12 +1389,12 @@
                     </div>
                 </div>
 
-                <!-- JOB TITLE -->
+                <!-- JOB TITLE EN H1 -->
                 <h1 class="hero-title">
                     <span class="gradient-text" data-translate="hero_badge">Product Manager • Product Owner • Business Strategy</span>
                 </h1>
 
-                <!-- NOM -->
+                <!-- NOM EN SECOND PLAN -->
                 <div style="font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 700; color: var(--text-secondary); margin-bottom: 2rem; letter-spacing: 0.1em; text-transform: uppercase;">
                     FLORIAN BOUCHART
                 </div>
@@ -1508,7 +1406,8 @@
                 </p>
 
                 <div class="cta-container">
-                    <a href="https://image2url.com/r2/default/documents/1770798569794-5d4a6d97-df5e-45f3-b637-f361ef127d80.pdf" target="_blank" class="btn btn-primary">
+                    <!-- LE LIEN DU CV ICI CHANGE DYNAMIQUEMENT AVEC LE JS -->
+                    <a href="https://image2url.com/r2/default/documents/1771509383048-d973961c-9a79-41df-93b7-2c19fc54c08f.pdf" target="_blank" class="btn btn-primary" id="cvLink">
                         <i data-lucide="file-text" width="20"></i>
                         <span class="cv-text" data-translate="btn_cv">Voir mon CV</span>
                     </a>
@@ -1637,6 +1536,7 @@
                             <strong>🇫🇮 Vaasa, Finlande</strong> - Entrepreneurship and Venturing (Vaasan yliopisto)<br>
                             <strong>🇷🇴 Cluj-Napoca, Roumanie</strong> - Innovation, Design-Thinking and Entrepreneurship (Universitatea Babes-Bolyai)
                         </p>
+                        <!-- Integration Logos International -->
                         <div style="display: flex; gap: 15px; margin-top: 15px;">
                             <img src="https://image2url.com/r2/default/images/1770845625436-a5d78456-5192-4fa3-acb0-7b68d63a9443.png" alt="Vaasa Logo" style="height: 40px; background: white; padding: 2px; border-radius: 8px;">
                             <img src="https://image2url.com/r2/default/images/1770845505974-51235c8a-89de-4332-ab3b-4ff65902abd0.png" alt="UBBFSEGA Logo" style="height: 40px; background: white; padding: 2px; border-radius: 8px;">
@@ -2083,7 +1983,7 @@
         let currentLang = 'fr';
         let soberMode = false;
 
-        // DICTIONNAIRE DE TRADUCTION ET DONNÉES COMPLÈTES
+        // DICTIONNAIRE DE TRADUCTION ET DONNÉES COMPLÈTES (VERSION FINALE & CORRIGÉE)
         const translations = {
             fr: {
                 sober_mode: "Clair",
@@ -2091,6 +1991,7 @@
                 hero_badge: "Product Manager • Product Owner • Business Strategy",
                 hero_description: "Pourquoi choisir entre la rigueur d'un Chef de Projet et l'audace d'un Entrepreneur ? Mon profil est la fusion des deux : <span class=\"highlight\">structuré par le Delivery (GRDF)</span> et <span class=\"highlight\">piloté par la Discovery (Desrèves)</span>. Je suis le maillon manquant pour transformer votre vision en produit performant.",
                 btn_cv: "Voir mon CV",
+                cv_link: "https://image2url.com/r2/default/documents/1771509383048-d973961c-9a79-41df-93b7-2c19fc54c08f.pdf",
                 nav_home: "Accueil",
                 nav_career: "Parcours",
                 nav_skills: "Atouts",
@@ -2236,6 +2137,7 @@
                 hero_badge: "Product Manager • Product Owner • Business Strategy",
                 hero_description: "Why choose between the rigor of a Project Manager and the boldness of an Entrepreneur? My profile fuses both: <span class=\"highlight\">structured by Delivery (GRDF)</span> and <span class=\"highlight\">driven by Discovery (Desrèves)</span>. I am the missing link to turn your vision into a performing product.",
                 btn_cv: "View Resume",
+                cv_link: "https://image2url.com/r2/default/documents/1771509404698-73bd3b1c-401e-4e45-a83d-5c40c38d9f6b.pdf",
                 nav_home: "Home",
                 nav_career: "Career",
                 nav_skills: "Strengths",
@@ -2256,7 +2158,7 @@
                 exp_desreves_title: "Founder (Discovery & Product Sense)",
                 exp_desreves_period: "2024 - Present",
                 exp_desreves_comp: "Desrèves - Clothing Brand",
-                exp_desreves_desc: "My first real \"Product\" experience. I built everything from scratch: brand identity, product sourcing, website (Liquid/CSS). I am learning to listen to the market, iterate collections, and manage the full \"Go-to-Market\" of a physical product. The school of pragmatism and ROI.",
+                exp_desreves_desc: "My first real \"Product\" experience. I built everything from scratch: brand identity, sourcing, website (Liquid/CSS). I am learning to listen to the market, iterate collections, and manage the full \"Go-to-Market\" of a physical product. The school of pragmatism and ROI.",
                 tag_entrepreneurship: "Entrepreneurship",
                 tag_product_design: "Product Design",
                 tag_web_dev: "Web Dev",
@@ -2281,7 +2183,7 @@
                 
                 exp_intl_title: "Design Thinking & Innovation",
                 exp_intl_comp: "Finland & Romania",
-                exp_intl_desc: "International modules focused on creativity and methodology. This is where I practiced <strong>Design Thinking</strong> intensively: starting from the user problem to innovate, prototype, and pitch.",
+                exp_intl_desc: "<strong>🇫🇮 Vaasa, Finland</strong> - Entrepreneurship and Venturing (Vaasan yliopisto)<br><strong>🇷🇴 Cluj-Napoca, Romania</strong> - Innovation, Design-Thinking and Entrepreneurship (Universitatea Babes-Bolyai)",
                 tag_mobility: "International Mobility",
                 tag_innovation: "Innovation",
                 tag_design_thinking: "Design Thinking",
@@ -2291,7 +2193,7 @@
                 vision_1_title: "Project & Product Fusion",
                 vision_1_desc: "In Project Management, I learned <strong>\"How\"</strong> (deliver on time, budget). In Entrepreneurship, I learned <strong>\"Why\"</strong> (market value). Product Management is the perfect alliance of these two worlds for me: delivering value, not just features.",
                 vision_2_title: "The Data Approach",
-                vision_2_desc: "At GRDF, I don't guess: I steer my portfolio with data. I want to transpose this analytical rigor to product to validate user hypotheses and prioritize the backlog based on facts.",
+                vision_2_desc: "At GRDF, I don't guess: I steer my portfolio with data. I want to transpose this analytical rigor to product to validate user hypotheses and prioritize the backlog factually, not emotionally.",
                 vision_3_title: "Design Thinking",
                 vision_3_desc: "My international experiences trained me in Design Thinking. I learned a fundamental lesson: don't jump to the tech solution, but fall in love with the user's problem. This is the mindset I want to bring to your team.",
                 vision_4_title: "Tech & AI",
@@ -2383,8 +2285,8 @@
                 force_1: "Je comprends les contraintes techniques, les enjeux business et les besoins utilisateurs. Je sers de traducteur pour aligner tout le monde.",
                 force_2: "Je sais arbitrer. Dans un projet, tout est important, mais tout n'est pas urgent. Je priorise ce qui apporte le plus de valeur immédiate.",
                 force_3: "J'ai dirigé des bénévoles (BDE) et des joueurs (E-sport). On ne les manage pas par l'ordre, mais par l'adhésion à une vision commune.",
-                force_4: "Je ne fais pas pour faire. Je fais pour obtenir un résultat mesurable (ROI, Satisfaction, Adoption).",
-                force_5: "Je n'attends pas qu'on me tienne la main. J'ai créé ma boîte, mon site, mes partenariats. Je sais me débrouiller et trouver des solutions.",
+                force_4: "Je n'attends pas qu'on me tienne la main. J'ai créé ma boîte, mon site, mes partenariats. Je sais me débrouiller et trouver des solutions.",
+                force_5: "Je ne fais pas pour faire. Je fais pour obtenir un résultat mesurable (ROI, Satisfaction, Adoption).",
                 force_6: "Je sais synthétiser des informations complexes pour permettre aux décideurs de trancher rapidement.",
                 
                 weak_1: "En tant que prestataire ou chef de projet, j'ai l'habitude de satisfaire le client à tout prix. En Produit, je dois apprendre à dire 'Non' pour protéger la roadmap et la vision.",
@@ -2398,8 +2300,8 @@
                 force_1: "I understand technical constraints, business stakes, and user needs. I act as a translator to align everyone.",
                 force_2: "I know how to arbitrate. In a project, everything is important, but not everything is urgent. I prioritize immediate value.",
                 force_3: "I led volunteers (Student Union) and players (E-sport). You don't manage them by order, but by adherence to a common vision.",
-                force_4: "I don't do things just to do them. I do them to get a measurable result (ROI, Satisfaction, Adoption).",
-                force_5: "I don't wait to be held by the hand. I created my company, my site, my partnerships. I know how to figure things out.",
+                force_4: "I don't wait to be held by the hand. I created my company, my site, my partnerships. I know how to figure things out.",
+                force_5: "I don't do things just to do them. I do them to get a measurable result (ROI, Satisfaction, Adoption).",
                 force_6: "I know how to synthesize complex information to allow decision-makers to decide quickly.",
                 
                 weak_1: "As a project manager/provider, I'm used to satisfying the client at all costs. In Product, I must learn to say 'No' to protect the roadmap and vision.",
@@ -2421,11 +2323,61 @@
                     logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
                     gradient: 'linear-gradient(135deg, #00d4aa, #6a4c93)',
                     categories: [
-                        { name: 'Gestion & Business', icon: 'briefcase', color: '#ff6b35', courses: ['RH et Management d\'équipe', 'Marketing BtoB (Négociation)', 'Marketing International', 'Financement et Investissement', 'Contrôle de gestion', 'Management Stratégique'] },
-                        { name: 'Stratégie Digitale', icon: 'trending-up', color: '#6a4c93', courses: ['RGPD / Marketing Digital', 'Digitalisation des entreprises', 'Communication Réseaux Sociaux'] },
-                        { name: 'Juridique', icon: 'award', color: '#00d4aa', courses: ['Droit du travail', 'Droit de la distribution/consommation'] },
-                        { name: 'Outils & Tech', icon: 'code', color: '#ff006e', courses: ['Outils de création graphique', 'Système d\'information pour la gestion', 'Tableaux de bord', 'Introduction à la programmation'] },
-                        { name: 'Innovation & International', icon: 'globe', color: '#ffbe0b', courses: ['Innovation et Design Thinking', 'Module Polytechnique (Eunice)', 'Management English', 'Gestion de projet et qualité', 'Simulation de gestion'] }
+                        {
+                            name: 'Gestion & Business',
+                            icon: 'briefcase',
+                            color: '#ff6b35',
+                            courses: [
+                                'RH et Management d\'équipe',
+                                'Marketing BtoB (Négociation)',
+                                'Marketing International',
+                                'Financement et Investissement',
+                                'Contrôle de gestion',
+                                'Management Stratégique'
+                            ]
+                        },
+                        {
+                            name: 'Stratégie Digitale',
+                            icon: 'trending-up',
+                            color: '#6a4c93',
+                            courses: [
+                                'RGPD / Marketing Digital',
+                                'Digitalisation des entreprises',
+                                'Communication Réseaux Sociaux'
+                            ]
+                        },
+                        {
+                            name: 'Juridique',
+                            icon: 'award',
+                            color: '#00d4aa',
+                            courses: [
+                                'Droit du travail',
+                                'Droit de la distribution/consommation'
+                            ]
+                        },
+                        {
+                            name: 'Outils & Tech',
+                            icon: 'code',
+                            color: '#ff006e',
+                            courses: [
+                                'Outils de création graphique',
+                                'Système d\'information pour la gestion',
+                                'Tableaux de bord',
+                                'Introduction à la programmation'
+                            ]
+                        },
+                        {
+                            name: 'Innovation & International',
+                            icon: 'globe',
+                            color: '#ffbe0b',
+                            courses: [
+                                'Innovation et Design Thinking',
+                                'Module Polytechnique (Eunice)',
+                                'Management English',
+                                'Gestion de projet et qualité',
+                                'Simulation de gestion'
+                            ]
+                        }
                     ]
                 },
                 {
@@ -2436,12 +2388,75 @@
                     logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
                     gradient: 'linear-gradient(135deg, #6a4c93, #ff006e)',
                     categories: [
-                        { name: 'Management des Organisations', icon: 'users', color: '#6a4c93', courses: ['Comportements organisationnels', 'Conduite de réunion', 'Négociation avec les syndicats', 'Recrutement 5.0', 'Gestion de conflits', 'Conduire des entretiens'] },
-                        { name: 'Gestion de Projet Agile', icon: 'target', color: '#ff006e', courses: ['Ingénierie de projet', 'Design entrepreneurial', 'Approche Phygitale', 'CRM', 'Business Model et start-up'] },
-                        { name: 'Finance & Performance', icon: 'bar-chart-3', color: '#00d4aa', courses: ['Management de la performance financière', 'Gestion des risques (Risk agil)', 'Outils financiers', 'Fiscalité d\'entreprise'] },
-                        { name: 'Environnement Légal', icon: 'award', color: '#ffbe0b', courses: ['Droit des affaires', 'Droit du numérique/RGPD', 'Appliquer la réglementation'] },
-                        { name: 'Outils Numériques', icon: 'code', color: '#ff6b35', courses: ['Maîtrise Suite Adobe & Power BI', 'Optimisation système d\'information', 'Veille numérique', 'Conception études et recherches'] },
-                        { name: 'RSE & International', icon: 'globe', color: '#00d4aa', courses: ['Diagnostic éthique et écologique', 'Management durable', 'Business English (TOEIC)', 'Semaine internationale', 'Développer capacités de transfert'] }
+                        {
+                            name: 'Management des Organisations',
+                            icon: 'users',
+                            color: '#6a4c93',
+                            courses: [
+                                'Comportements organisationnels',
+                                'Conduite de réunion',
+                                'Négociation avec les syndicats',
+                                'Recrutement 5.0',
+                                'Gestion de conflits',
+                                'Conduire des entretiens'
+                            ]
+                        },
+                        {
+                            name: 'Gestion de Projet Agile',
+                            icon: 'target',
+                            color: '#ff006e',
+                            courses: [
+                                'Ingénierie de projet',
+                                'Design entrepreneurial',
+                                'Approche Phygitale',
+                                'CRM',
+                                'Business Model et start-up'
+                            ]
+                        },
+                        {
+                            name: 'Finance & Performance',
+                            icon: 'bar-chart-3',
+                            color: '#00d4aa',
+                            courses: [
+                                'Management de la performance financière',
+                                'Gestion des risques (Risk agil)',
+                                'Outils financiers',
+                                'Fiscalité d\'entreprise'
+                            ]
+                        },
+                        {
+                            name: 'Environnement Légal',
+                            icon: 'award',
+                            color: '#ffbe0b',
+                            courses: [
+                                'Droit des affaires',
+                                'Droit du numérique/RGPD',
+                                'Appliquer la réglementation'
+                            ]
+                        },
+                        {
+                            name: 'Outils Numériques',
+                            icon: 'code',
+                            color: '#ff6b35',
+                            courses: [
+                                'Maîtrise Suite Adobe & Power BI',
+                                'Optimisation système d\'information',
+                                'Veille numérique',
+                                'Conception études et recherches'
+                            ]
+                        },
+                        {
+                            name: 'RSE & International',
+                            icon: 'globe',
+                            color: '#00d4aa',
+                            courses: [
+                                'Diagnostic éthique et écologique',
+                                'Management durable',
+                                'Business English (TOEIC)',
+                                'Semaine internationale',
+                                'Développer capacités de transfert'
+                            ]
+                        }
                     ]
                 },
                 {
@@ -2452,11 +2467,66 @@
                     logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
                     gradient: 'linear-gradient(135deg, #ff006e, #ff6b35)',
                     categories: [
-                        { name: 'Stratégie Avancée', icon: 'trending-up', color: '#ff6b35', courses: ['Intelligence collective', 'Négociation salariale', 'Indices de santé entreprise', 'Conduire projets de changement', 'Valoriser le potentiel d\'équipe', 'Intégrer personnalités difficiles'] },
-                        { name: 'Pilotage de Projet', icon: 'target', color: '#ff006e', courses: ['MS Project', 'Manager la dimension digitale', 'Amélioration continue', 'Scrum Master (Préparation)', 'Manager qualité'] },
-                        { name: 'Data & Innovation', icon: 'sparkles', color: '#6a4c93', courses: ['Power BI (Traitement avancé)', 'Analyse de données', 'Design Thinking', 'Slow Management', 'Protection de l\'innovation', 'Implémenter innovations managériales'] },
-                        { name: 'Entrepreneuriat & Finance', icon: 'briefcase', color: '#00d4aa', courses: ['Business Model financier', 'Réseaux d\'accompagnement', 'Financer son projet', 'Découverte parcours créateurs', 'Mémoire de recherche'] },
-                        { name: 'Marketing Digital', icon: 'trending-up', color: '#ffbe0b', courses: ['Marketing BtoB', 'Web marketing', 'Marketing digital avancé'] }
+                        {
+                            name: 'Stratégie Avancée',
+                            icon: 'trending-up',
+                            color: '#ff6b35',
+                            courses: [
+                                'Intelligence collective',
+                                'Négociation salariale',
+                                'Indices de santé entreprise',
+                                'Conduire projets de changement',
+                                'Valoriser le potentiel d\'équipe',
+                                'Intégrer personnalités difficiles'
+                            ]
+                        },
+                        {
+                            name: 'Pilotage de Projet',
+                            icon: 'target',
+                            color: '#ff006e',
+                            courses: [
+                                'MS Project',
+                                'Manager la dimension digitale',
+                                'Amélioration continue',
+                                'Scrum Master (Préparation)',
+                                'Manager qualité'
+                            ]
+                        },
+                        {
+                            name: 'Data & Innovation',
+                            icon: 'sparkles',
+                            color: '#6a4c93',
+                            courses: [
+                                'Power BI (Traitement avancé)',
+                                'Analyse de données',
+                                'Design Thinking',
+                                'Slow Management',
+                                'Protection de l\'innovation',
+                                'Implémenter innovations managériales'
+                            ]
+                        },
+                        {
+                            name: 'Entrepreneuriat & Finance',
+                            icon: 'briefcase',
+                            color: '#00d4aa',
+                            courses: [
+                                'Business Model financier',
+                                'Réseaux d\'accompagnement',
+                                'Financer son projet',
+                                'Découverte parcours créateurs',
+                                'Mémoire de recherche'
+                            ]
+                        },
+                        {
+                            name: 'Marketing Digital',
+                            icon: 'trending-up',
+                            color: '#ffbe0b',
+                            courses: [
+                                'Marketing BtoB',
+                                'Web marketing',
+                                'Marketing digital avancé'
+                            ]
+                        }
                     ]
                 },
                 {
@@ -2467,11 +2537,56 @@
                     logo: 'https://image2url.com/r2/default/images/1770845782054-6aff1901-b7cb-4072-8640-c111adbd508c.png',
                     gradient: 'linear-gradient(135deg, #00d4aa, #ffbe0b)',
                     categories: [
-                        { name: 'Innovation & Management (MPTHON)', icon: 'cpu', color: '#ff6b35', courses: ['Collaboration Manager-Ingénieur (avec INSA)', 'Coaching d\'équipe : Gestion de projet & Design Thinking', 'Création d\'intelligence collective et innovation agile'] },
-                        { name: 'Développement Durable & Industrie', icon: 'sprout', color: '#00d4aa', courses: ['Analyse systémique : Produire durablement (RSE, ODD)', 'Économie circulaire & de la fonctionnalité', 'Diagnostic complet de durabilité d\'un site industriel'] },
-                        { name: 'International & Analyse Média (Logos : Laval Québec)', icon: 'eye', color: '#6a4c93', courses: ['<div style="display:flex; align-items:center; gap:10px;">Partenariat Université Laval (Québec) <img src="https://image2url.com/r2/default/images/1770845708512-fe418a7a-02d0-4180-b674-2246efe895c1.png" style="height:20px; background:white; padding:2px; border-radius:4px;"></div>', 'Sémiotique : Décryptage des stratégies visuelles & marketing', 'Analyse critique des médias et réseaux sociaux'] },
-                        { name: 'Communication Professionnelle', icon: 'mic', color: '#ff006e', courses: ['Prise de parole à fort enjeu & Pitch efficace', 'Gestion du stress et maîtrise de l\'auditoire', 'Synthèse et structuration du discours'] },
-                        { name: 'Performance Linguistique (TOEIC)', icon: 'languages', color: '#ffbe0b', courses: ['Score Test Blanc : 925/990 (Niveau B2) <a href="https://image2url.com/r2/default/images/1770846207735-7e032cf9-27e0-47ca-8124-f5778d31ce2e.png" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold; margin-left:5px;">Cliquer pour voir</a>', 'Certification officielle : Mars 2026 (Objectif 950+)', 'Anglais Business & Professionnel'] }
+                        {
+                            name: 'Innovation & Management (MPTHON)',
+                            icon: 'cpu',
+                            color: '#ff6b35',
+                            courses: [
+                                'Collaboration Manager-Ingénieur (avec INSA)',
+                                'Coaching d\'équipe : Gestion de projet & Design Thinking',
+                                'Création d\'intelligence collective et innovation agile'
+                            ]
+                        },
+                        {
+                            name: 'Développement Durable & Industrie',
+                            icon: 'sprout',
+                            color: '#00d4aa',
+                            courses: [
+                                'Analyse systémique : Produire durablement (RSE, ODD)',
+                                'Économie circulaire & de la fonctionnalité',
+                                'Diagnostic complet de durabilité d\'un site industriel'
+                            ]
+                        },
+                        {
+                            name: 'International & Analyse Média (Logos : Laval Québec)',
+                            icon: 'eye',
+                            color: '#6a4c93',
+                            courses: [
+                                '<div style="display:flex; align-items:center; gap:10px;">Partenariat Université Laval (Québec) <img src="https://image2url.com/r2/default/images/1770845708512-fe418a7a-02d0-4180-b674-2246efe895c1.png" style="height:20px; background:white; padding:2px; border-radius:4px;"></div>',
+                                'Sémiotique : Décryptage des stratégies visuelles & marketing',
+                                'Analyse critique des médias et réseaux sociaux'
+                            ]
+                        },
+                        {
+                            name: 'Communication Professionnelle',
+                            icon: 'mic',
+                            color: '#ff006e',
+                            courses: [
+                                'Prise de parole à fort enjeu & Pitch efficace',
+                                'Gestion du stress et maîtrise de l\'auditoire',
+                                'Synthèse et structuration du discours'
+                            ]
+                        },
+                        {
+                            name: 'Performance Linguistique (TOEIC)',
+                            icon: 'languages',
+                            color: '#ffbe0b',
+                            courses: [
+                                'Score Test Blanc : 925/990 (Niveau B2) <a href="https://image2url.com/r2/default/images/1770846207735-7e032cf9-27e0-47ca-8124-f5778d31ce2e.png" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold; margin-left:5px;">Cliquer pour voir</a>',
+                                'Certification officielle : Mars 2026 (Objectif 950+)',
+                                'Anglais Business & Professionnel'
+                            ]
+                        }
                     ]
                 },
                 {
@@ -2505,11 +2620,61 @@
                     logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
                     gradient: 'linear-gradient(135deg, #00d4aa, #6a4c93)',
                     categories: [
-                        { name: 'Business & Management', icon: 'briefcase', color: '#ff6b35', courses: ['HR & Team Management', 'B2B Marketing (Negotiation)', 'International Marketing', 'Financing & Investment', 'Management Control', 'Strategic Management'] },
-                        { name: 'Digital Strategy', icon: 'trending-up', color: '#6a4c93', courses: ['GDPR / Digital Marketing', 'Business Digitalization', 'Social Media Communication'] },
-                        { name: 'Legal', icon: 'award', color: '#00d4aa', courses: ['Labor Law', 'Distribution/Consumer Law'] },
-                        { name: 'Tools & Tech', icon: 'code', color: '#ff006e', courses: ['Graphic Creation Tools', 'Management Information Systems', 'Dashboards', 'Introduction to Programming'] },
-                        { name: 'Innovation & International', icon: 'globe', color: '#ffbe0b', courses: ['Innovation & Design Thinking', 'Polytechnic Module (Eunice)', 'Management English', 'Project Management & Quality', 'Business Simulation'] }
+                        {
+                            name: 'Business & Management',
+                            icon: 'briefcase',
+                            color: '#ff6b35',
+                            courses: [
+                                'HR & Team Management',
+                                'B2B Marketing (Negotiation)',
+                                'International Marketing',
+                                'Financing & Investment',
+                                'Management Control',
+                                'Strategic Management'
+                            ]
+                        },
+                        {
+                            name: 'Digital Strategy',
+                            icon: 'trending-up',
+                            color: '#6a4c93',
+                            courses: [
+                                'GDPR / Digital Marketing',
+                                'Business Digitalization',
+                                'Social Media Communication'
+                            ]
+                        },
+                        {
+                            name: 'Legal',
+                            icon: 'award',
+                            color: '#00d4aa',
+                            courses: [
+                                'Labor Law',
+                                'Distribution/Consumer Law'
+                            ]
+                        },
+                        {
+                            name: 'Tools & Tech',
+                            icon: 'code',
+                            color: '#ff006e',
+                            courses: [
+                                'Graphic Creation Tools',
+                                'Management Information Systems',
+                                'Dashboards',
+                                'Introduction to Programming'
+                            ]
+                        },
+                        {
+                            name: 'Innovation & International',
+                            icon: 'globe',
+                            color: '#ffbe0b',
+                            courses: [
+                                'Innovation & Design Thinking',
+                                'Polytechnic Module (Eunice)',
+                                'Management English',
+                                'Project Management & Quality',
+                                'Business Simulation'
+                            ]
+                        }
                     ]
                 },
                 {
@@ -2520,12 +2685,75 @@
                     logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
                     gradient: 'linear-gradient(135deg, #6a4c93, #ff006e)',
                     categories: [
-                        { name: 'Organizational Management', icon: 'users', color: '#6a4c93', courses: ['Organizational Behavior', 'Meeting Management', 'Union Negotiation', 'Recruitment 5.0', 'Conflict Management', 'Conducting Interviews'] },
-                        { name: 'Agile Project Mgmt', icon: 'target', color: '#ff006e', courses: ['Project Engineering', 'Entrepreneurial Design', 'Phygital Approach', 'CRM', 'Business Models & Startups'] },
-                        { name: 'Finance & Performance', icon: 'bar-chart-3', color: '#00d4aa', courses: ['Financial Performance Mgmt', 'Risk Management (Agile Risk)', 'Financial Tools', 'Corporate Taxation'] },
-                        { name: 'Legal Environment', icon: 'award', color: '#ffbe0b', courses: ['Business Law', 'Digital Law/GDPR', 'Regulatory Compliance'] },
-                        { name: 'Digital Tools', icon: 'code', color: '#ff6b35', courses: ['Adobe Suite Mastery & Power BI', 'Information System Optimization', 'Digital Watch', 'Research Design'] },
-                        { name: 'CSR & International', icon: 'globe', color: '#00d4aa', courses: ['Ethical & Ecological Diagnosis', 'Sustainable Management', 'Business English (TOEIC)', 'International Week', 'Developing Transfer Capabilities'] }
+                        {
+                            name: 'Organizational Management',
+                            icon: 'users',
+                            color: '#6a4c93',
+                            courses: [
+                                'Organizational Behavior',
+                                'Meeting Management',
+                                'Union Negotiation',
+                                'Recruitment 5.0',
+                                'Conflict Management',
+                                'Conducting Interviews'
+                            ]
+                        },
+                        {
+                            name: 'Agile Project Mgmt',
+                            icon: 'target',
+                            color: '#ff006e',
+                            courses: [
+                                'Project Engineering',
+                                'Entrepreneurial Design',
+                                'Phygital Approach',
+                                'CRM',
+                                'Business Models & Startups'
+                            ]
+                        },
+                        {
+                            name: 'Finance & Performance',
+                            icon: 'bar-chart-3',
+                            color: '#00d4aa',
+                            courses: [
+                                'Financial Performance Mgmt',
+                                'Risk Management (Agile Risk)',
+                                'Financial Tools',
+                                'Corporate Taxation'
+                            ]
+                        },
+                        {
+                            name: 'Legal Environment',
+                            icon: 'award',
+                            color: '#ffbe0b',
+                            courses: [
+                                'Business Law',
+                                'Digital Law/GDPR',
+                                'Regulatory Compliance'
+                            ]
+                        },
+                        {
+                            name: 'Digital Tools',
+                            icon: 'code',
+                            color: '#ff6b35',
+                            courses: [
+                                'Adobe Suite Mastery & Power BI',
+                                'Information System Optimization',
+                                'Digital Watch',
+                                'Research Design'
+                            ]
+                        },
+                        {
+                            name: 'CSR & International',
+                            icon: 'globe',
+                            color: '#00d4aa',
+                            courses: [
+                                'Ethical & Ecological Diagnosis',
+                                'Sustainable Management',
+                                'Business English (TOEIC)',
+                                'International Week',
+                                'Developing Transfer Capabilities'
+                            ]
+                        }
                     ]
                 },
                 {
@@ -2536,11 +2764,66 @@
                     logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
                     gradient: 'linear-gradient(135deg, #ff006e, #ff6b35)',
                     categories: [
-                        { name: 'Advanced Strategy', icon: 'trending-up', color: '#ff6b35', courses: ['Collective Intelligence', 'Salary Negotiation', 'Company Health Indices', 'Leading Change Projects', 'Valuing Team Potential', 'Managing Difficult Personalities'] },
-                        { name: 'Project Steering', icon: 'target', color: '#ff006e', courses: ['MS Project', 'Managing Digital Dimension', 'Continuous Improvement', 'Scrum Master (Prep)', 'Quality Management'] },
-                        { name: 'Data & Innovation', icon: 'sparkles', color: '#6a4c93', courses: ['Power BI (Advanced)', 'Data Analysis', 'Design Thinking', 'Slow Management', 'Innovation Protection', 'Implementing Managerial Innovations'] },
-                        { name: 'Entrepreneurship & Finance', icon: 'briefcase', color: '#00d4aa', courses: ['Financial Business Model', 'Support Networks', 'Project Financing', 'Creator Journey Discovery', 'Research Thesis'] },
-                        { name: 'Digital Marketing', icon: 'trending-up', color: '#ffbe0b', courses: ['B2B Marketing', 'Web Marketing', 'Advanced Digital Marketing'] }
+                        {
+                            name: 'Advanced Strategy',
+                            icon: 'trending-up',
+                            color: '#ff6b35',
+                            courses: [
+                                'Collective Intelligence',
+                                'Salary Negotiation',
+                                'Company Health Indices',
+                                'Leading Change Projects',
+                                'Valuing Team Potential',
+                                'Managing Difficult Personalities'
+                            ]
+                        },
+                        {
+                            name: 'Project Steering',
+                            icon: 'target',
+                            color: '#ff006e',
+                            courses: [
+                                'MS Project',
+                                'Managing Digital Dimension',
+                                'Continuous Improvement',
+                                'Scrum Master (Prep)',
+                                'Quality Management'
+                            ]
+                        },
+                        {
+                            name: 'Data & Innovation',
+                            icon: 'sparkles',
+                            color: '#6a4c93',
+                            courses: [
+                                'Power BI (Advanced)',
+                                'Data Analysis',
+                                'Design Thinking',
+                                'Slow Management',
+                                'Innovation Protection',
+                                'Implementing Managerial Innovations'
+                            ]
+                        },
+                        {
+                            name: 'Entrepreneurship & Finance',
+                            icon: 'briefcase',
+                            color: '#00d4aa',
+                            courses: [
+                                'Financial Business Model',
+                                'Support Networks',
+                                'Project Financing',
+                                'Creator Journey Discovery',
+                                'Research Thesis'
+                            ]
+                        },
+                        {
+                            name: 'Digital Marketing',
+                            icon: 'trending-up',
+                            color: '#ffbe0b',
+                            courses: [
+                                'B2B Marketing',
+                                'Web Marketing',
+                                'Advanced Digital Marketing'
+                            ]
+                        }
                     ]
                 },
                 {
@@ -2551,11 +2834,56 @@
                     logo: 'https://image2url.com/r2/default/images/1770845782054-6aff1901-b7cb-4072-8640-c111adbd508c.png',
                     gradient: 'linear-gradient(135deg, #00d4aa, #ffbe0b)',
                     categories: [
-                        { name: 'Innovation & Management (MPTHON)', icon: 'cpu', color: '#ff6b35', courses: ['Manager-Engineer Collaboration (with INSA)', 'Team Coaching: Project Mgmt & Design Thinking', 'Creating Collective Intelligence & Agile Innovation'] },
-                        { name: 'Sustainable Development & Industry', icon: 'sprout', color: '#00d4aa', courses: ['Systemic Analysis: Sustainable Production (CSR, SDGs)', 'Circular Economy & Functionality Economy', 'Full Sustainability Diagnostic of an Industrial Site'] },
-                        { name: 'International & Media Analysis', icon: 'eye', color: '#6a4c93', courses: ['<div style="display:flex; align-items:center; gap:10px;">Partnership with Université Laval (Quebec) <img src="https://image2url.com/r2/default/images/1770845708512-fe418a7a-02d0-4180-b674-2246efe895c1.png" style="height:20px; background:white; padding:2px; border-radius:4px;"></div>', 'Semiotics: Decoding Visual & Marketing Strategies', 'Critical Analysis of Media and Social Networks'] },
-                        { name: 'Professional Communication', icon: 'mic', color: '#ff006e', courses: ['High-Stakes Public Speaking & Effective Pitching', 'Stress Management and Audience Mastery', 'Synthesis and Structuring of Discourse'] },
-                        { name: 'Linguistic Performance (TOEIC)', icon: 'languages', color: '#ffbe0b', courses: ['Practice Test Score: 925/990 (B2 Level) <a href="https://image2url.com/r2/default/images/1770846207735-7e032cf9-27e0-47ca-8124-f5778d31ce2e.png" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold; margin-left:5px;">View</a>', 'Official Certification: March 2026 (Target 950+)', 'Business & Professional English'] }
+                        {
+                            name: 'Innovation & Management (MPTHON)',
+                            icon: 'cpu',
+                            color: '#ff6b35',
+                            courses: [
+                                'Manager-Engineer Collaboration (with INSA)',
+                                'Team Coaching: Project Mgmt & Design Thinking',
+                                'Creating Collective Intelligence & Agile Innovation'
+                            ]
+                        },
+                        {
+                            name: 'Sustainable Development & Industry',
+                            icon: 'sprout',
+                            color: '#00d4aa',
+                            courses: [
+                                'Systemic Analysis: Sustainable Production (CSR, SDGs)',
+                                'Circular Economy & Functionality Economy',
+                                'Full Sustainability Diagnostic of an Industrial Site'
+                            ]
+                        },
+                        {
+                            name: 'International & Media Analysis',
+                            icon: 'eye',
+                            color: '#6a4c93',
+                            courses: [
+                                '<div style="display:flex; align-items:center; gap:10px;">Partnership with Université Laval (Quebec) <img src="https://image2url.com/r2/default/images/1770845708512-fe418a7a-02d0-4180-b674-2246efe895c1.png" style="height:20px; background:white; padding:2px; border-radius:4px;"></div>',
+                                'Semiotics: Decoding Visual & Marketing Strategies',
+                                'Critical Analysis of Media and Social Networks'
+                            ]
+                        },
+                        {
+                            name: 'Professional Communication',
+                            icon: 'mic',
+                            color: '#ff006e',
+                            courses: [
+                                'High-Stakes Public Speaking & Effective Pitching',
+                                'Stress Management and Audience Mastery',
+                                'Synthesis and Structuring of Discourse'
+                            ]
+                        },
+                        {
+                            name: 'Linguistic Performance (TOEIC)',
+                            icon: 'languages',
+                            color: '#ffbe0b',
+                            courses: [
+                                'Practice Test Score: 925/990 (B2 Level) <a href="https://image2url.com/r2/default/images/1770846207735-7e032cf9-27e0-47ca-8124-f5778d31ce2e.png" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold; margin-left:5px;">View</a>',
+                                'Official Certification: March 2026 (Target 950+)',
+                                'Business & Professional English'
+                            ]
+                        }
                     ]
                 },
                 {
@@ -2605,6 +2933,7 @@
             cursorGlow.style.top = glowY + 'px';
             requestAnimationFrame(animateGlow);
         }
+        
         animateGlow();
 
         // --- LOGIQUE TIMELINE & RECHERCHE ---
@@ -2811,6 +3140,12 @@
 
             if (searchInput) {
                 searchInput.placeholder = t.search_placeholder;
+            }
+            
+            // Mise à jour dynamique du lien CV selon la langue
+            const cvLinkElement = document.getElementById('cvLink');
+            if (cvLinkElement && t.cv_link) {
+                cvLinkElement.href = t.cv_link;
             }
 
             renderTimeline(searchInput.value);
