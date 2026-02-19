@@ -31,45 +31,49 @@
             --pink: #ff006e;
             --yellow: #ffbe0b;
             
-            /* --- THÈME MIDNIGHT PRO --- */
-            --bg-primary: #020617; /* Slate 950 */
+            /* --- THÈME MIDNIGHT PRO (Modifié) --- */
+            --bg-primary: #020617; /* Slate 950 - Bleu nuit profond */
             --bg-secondary: #0f172a; /* Slate 900 */
             
-            /* Effets de transparence */
-            --glass-bg: rgba(30, 41, 59, 0.6); 
+            /* Effets de transparence (Glassmorphism - Adapté au bleu nuit) */
+            --glass-bg: rgba(30, 41, 59, 0.6); /* Slate 800 avec transparence */
             --glass-border: rgba(255, 255, 255, 0.08);
             
-            /* Bordures */
+            /* Bordures colorées par défaut pour le style Cyber */
             --card-border: rgba(255, 107, 53, 0.2);
             
             /* Modales & Dock */
-            --modal-bg: rgba(2, 6, 23, 0.95);
-            --dock-bg: rgba(15, 23, 42, 0.8);
+            --modal-bg: rgba(2, 6, 23, 0.95); /* Slate 950 presque opaque */
+            --dock-bg: rgba(15, 23, 42, 0.8); /* Slate 900 */
             --dock-border: rgba(255, 255, 255, 0.1);
             
             /* Typographie */
             --text-primary: #ffffff;
-            --text-secondary: #94a3b8;
+            --text-secondary: #94a3b8; /* Slate 400 - Plus doux sur bleu nuit */
             
-            /* Fonts */
+            /* Fonts Families */
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
-        /* --- THÈME CLAIR (MODE SOBRE) --- */
+        /* --- THÈME CLAIR (MODE SOBRE / ENTREPRISE) --- */
         body.sober-mode {
+            /* Fond gris très clair "Papier" */
             --bg-primary: #f2f2f7;
             --bg-secondary: #ffffff;
             
+            /* Cartes blanches et propres */
             --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(0, 0, 0, 0.05);
             --card-border: rgba(0, 0, 0, 0.08);
             
             --modal-bg: rgba(255, 255, 255, 0.98);
             
+            /* Texte sombre lisible */
             --text-primary: #1d1d1f;
             --text-secondary: #515155;
             
+            /* Dock clair */
             --dock-bg: rgba(255, 255, 255, 0.9);
             --dock-border: rgba(0, 0, 0, 0.1);
         }
@@ -79,15 +83,16 @@
             color: var(--text-primary);
             font-family: var(--font-body);
             line-height: 1.6;
-            overflow-x: hidden;
-            padding-bottom: 140px;
+            overflow-x: hidden; /* Évite le scroll horizontal */
+            padding-bottom: 140px; /* Marge pour le Dock en bas */
             transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         /* ==========================================================================
-           2. EFFETS D'ARRIÈRE-PLAN
+           2. EFFETS D'ARRIÈRE-PLAN (PARTICULES & LUMIÈRES)
            ========================================================================== */
         
+        /* Grille futuriste en fond */
         .grid-background {
             position: fixed;
             inset: 0;
@@ -99,6 +104,7 @@
             pointer-events: none;
         }
 
+        /* Halo lumineux qui suit la souris */
         .cursor-glow {
             position: fixed;
             width: 700px;
@@ -118,8 +124,11 @@
             mix-blend-mode: screen;
         }
         
-        .cursor-glow.active { opacity: 1; }
+        .cursor-glow.active {
+            opacity: 1;
+        }
 
+        /* Orbes flottantes colorées */
         .orb {
             position: fixed;
             border-radius: 50%;
@@ -163,6 +172,7 @@
             66% { transform: translate(-20px, 20px) scale(0.95) rotate(-5deg); }
         }
 
+        /* Conteneur principal centré */
         .container {
             position: relative;
             z-index: 10;
@@ -172,7 +182,7 @@
         }
 
         /* ==========================================================================
-           3. HERO SECTION
+           3. HERO SECTION (L'ACCUEIL)
            ========================================================================== */
         
         .hero {
@@ -190,6 +200,7 @@
             width: 100%;
         }
 
+        /* Image de profil avec animation Pulse */
         .profile-image-wrapper {
             margin-bottom: 2rem;
             display: flex;
@@ -225,9 +236,10 @@
             to { opacity: 1; transform: scale(1); }
         }
 
+        /* Titre Principal */
         .hero-title {
             font-family: var(--font-display);
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: clamp(1.5rem, 3vw, 2.5rem); 
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1rem;
@@ -243,6 +255,7 @@
             filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.4));
         }
 
+        /* Sous-titre & Description */
         .hero-description {
             font-size: clamp(1rem, 2vw, 1.2rem);
             color: var(--text-secondary);
@@ -257,6 +270,7 @@
             text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);
         }
 
+        /* --- BOUTONS HERO (AVEC L'ANIMATION CERCLE) --- */
         .cta-container {
             display: flex;
             gap: 1.5rem;
@@ -280,6 +294,7 @@
             z-index: 1;
         }
 
+        /* L'Animation "Cercle qui grandit" au survol */
         .btn::before {
             content: '';
             position: absolute;
@@ -299,6 +314,7 @@
             height: 500px;
         }
 
+        /* Bouton Primaire (Dégradé) */
         .btn-primary {
             background: linear-gradient(135deg, var(--orange), var(--pink));
             color: white;
@@ -310,6 +326,7 @@
             box-shadow: 0 15px 50px rgba(255, 107, 53, 0.7);
         }
 
+        /* Bouton Secondaire (Outline) */
         .btn-secondary {
             background: transparent;
             color: var(--text-primary);
@@ -323,6 +340,7 @@
             box-shadow: 0 10px 40px rgba(0, 212, 170, 0.2);
         }
 
+        /* Indicateur de Scroll (Flèche bas) */
         .scroll-down {
             position: absolute;
             bottom: 40px;
@@ -347,7 +365,7 @@
         }
 
         /* ==========================================================================
-           4. SECTIONS & GRILLES
+           4. STRUCTURE GÉNÉRALE DES SECTIONS
            ========================================================================== */
         
         section {
@@ -372,6 +390,8 @@
             font-size: clamp(1.1rem, 2vw, 1.4rem);
             color: var(--text-secondary);
         }
+
+        /* --- GRILLES (Layout Adaptatif) --- */
         
         .experience-grid, 
         .vision-grid, 
@@ -380,9 +400,10 @@
             gap: 2rem;
             max-width: 1400px;
             margin: 0 auto;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Mobile First */
         }
 
+        /* Tablette (min 768px) */
         @media (min-width: 768px) {
             .experience-grid, 
             .vision-grid, 
@@ -390,7 +411,8 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
+        /* Desktop (min 1200px) */
         @media (min-width: 1200px) {
             .experience-grid { grid-template-columns: repeat(3, 1fr); }
             .vision-grid { grid-template-columns: repeat(4, 1fr); }
@@ -398,7 +420,7 @@
         }
 
         /* ==========================================================================
-           5. CARDS
+           5. CARDS (DESIGN GLASSMORPHISM)
            ========================================================================== */
         
         .card-glass {
@@ -414,6 +436,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
+        /* Effet de survol */
         .experience-card:hover, 
         .vision-card:hover, 
         .skill-category:hover {
@@ -423,7 +446,7 @@
             background: rgba(30, 30, 30, 0.01);
         }
 
-        /* EXP */
+        /* --- DÉTAILS EXPÉRIENCES --- */
         .exp-header {
             display: flex;
             align-items: flex-start;
@@ -440,7 +463,7 @@
             justify-content: center;
             flex-shrink: 0;
             color: white;
-            background: #FFFFFF;
+            background: #FFFFFF; /* Fond blanc pour logos */
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             overflow: hidden;
             padding: 2px;
@@ -452,11 +475,12 @@
             object-fit: contain;
         }
         
+        /* Fallback pour icônes sans image */
         .exp-icon.no-img {
             background: linear-gradient(135deg, #ff6b35, #f77f00); 
             padding: 0;
         }
-        
+
         .exp-info h3 {
             font-family: var(--font-display);
             font-size: 1.5rem;
@@ -506,7 +530,7 @@
             color: white;
         }
 
-        /* VISION */
+        /* --- DÉTAILS VISION --- */
         .vision-icon {
             width: 65px;
             height: 65px;
@@ -532,7 +556,7 @@
         }
 
         /* ==========================================================================
-           6. ATOUTS & MODALES
+           6. SECTION ATOUTS (AVEC MODAL POPUPS INTERACTIFS)
            ========================================================================== */
         
         .traits-container {
@@ -543,13 +567,9 @@
             gap: 2rem;
         }
 
-        .trait-card.strengths {
-            border-left: 4px solid var(--teal);
-        }
-
-        .trait-card.weaknesses {
-            border-left: 4px solid var(--yellow);
-        }
+        /* Barres latérales de couleur */
+        .trait-card.strengths { border-left: 4px solid var(--teal); }
+        .trait-card.weaknesses { border-left: 4px solid var(--yellow); }
 
         .trait-header {
             display: flex;
@@ -557,7 +577,7 @@
             gap: 1rem;
             margin-bottom: 2rem;
         }
-        
+
         .trait-badge {
             padding: 0.5rem 1.2rem;
             border-radius: 2rem;
@@ -566,24 +586,25 @@
             letter-spacing: 0.05em;
         }
 
-        .trait-badge.green {
-            background: rgba(0, 212, 170, 0.15);
-            color: var(--teal);
-            border: 1px solid rgba(0, 212, 170, 0.3);
-        }
-
-        .trait-badge.amber {
-            background: rgba(255, 190, 11, 0.15);
-            color: var(--yellow);
-            border: 1px solid rgba(255, 190, 11, 0.3);
+        .trait-badge.green { 
+            background: rgba(0, 212, 170, 0.15); 
+            color: var(--teal); 
+            border: 1px solid rgba(0, 212, 170, 0.3); 
         }
         
+        .trait-badge.amber { 
+            background: rgba(255, 190, 11, 0.15); 
+            color: var(--yellow); 
+            border: 1px solid rgba(255, 190, 11, 0.3); 
+        }
+
         .trait-list {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
+        /* Élément cliquable pour ouvrir la popup */
         .trait-item {
             display: flex;
             align-items: flex-start;
@@ -617,7 +638,7 @@
             line-height: 1.6;
         }
 
-        /* Modal */
+        /* --- STYLE DES MODALES POPUP --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -639,7 +660,7 @@
             opacity: 1;
             visibility: visible;
         }
-        
+
         .modal-content {
             background: var(--modal-bg);
             border: 1px solid var(--glass-border);
@@ -656,7 +677,7 @@
         .modal-overlay.active .modal-content {
             transform: translateY(0);
         }
-        
+
         .modal-close {
             position: absolute;
             top: 1.5rem;
@@ -679,7 +700,7 @@
             color: white;
             transform: rotate(90deg);
         }
-        
+
         .modal-title {
             font-family: var(--font-display);
             font-size: 2rem;
@@ -697,7 +718,7 @@
         }
 
         /* ==========================================================================
-           7. SKILLS & TIMELINE
+           7. COMPÉTENCES
            ========================================================================== */
         
         .skill-category h3 {
@@ -735,7 +756,10 @@
             box-shadow: 0 0 20px rgba(106, 76, 147, 0.5);
         }
 
-        /* Timeline */
+        /* ==========================================================================
+           8. FORMATION (TIMELINE)
+           ========================================================================== */
+        
         .timeline {
             display: flex;
             flex-direction: column;
@@ -756,7 +780,7 @@
             border-color: var(--purple);
             box-shadow: 0 0 40px rgba(106, 76, 147, 0.15);
         }
-        
+
         .timeline-header {
             padding: 1.5rem 2rem;
             display: flex;
@@ -771,7 +795,7 @@
         .timeline-header:hover {
             background: rgba(255, 255, 255, 0.03);
         }
-        
+
         .timeline-badge {
             width: 65px;
             height: 65px;
@@ -789,7 +813,7 @@
             overflow: hidden;
             padding: 2px;
         }
-
+        
         .timeline-badge img {
             width: 100%;
             height: 100%;
@@ -800,7 +824,7 @@
             background: linear-gradient(135deg, var(--teal), var(--purple));
             padding: 0;
         }
-        
+
         .timeline-info h3 {
             font-family: var(--font-display);
             font-weight: 700;
@@ -823,7 +847,7 @@
             font-weight: 700;
             font-size: 0.9rem;
         }
-        
+
         .timeline-content {
             max-height: 0;
             overflow: hidden;
@@ -837,7 +861,7 @@
         .timeline-body {
             padding: 0 2rem 2rem 2rem;
         }
-        
+
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -858,7 +882,7 @@
             box-shadow: 0 0 30px rgba(255, 107, 53, 0.2);
             transform: none;
         }
-        
+
         .category-header {
             display: flex;
             align-items: center;
@@ -910,7 +934,7 @@
             border-bottom: none;
         }
 
-        /* --- SEARCH --- */
+        /* --- BARRE DE RECHERCHE --- */
         .search-container {
             max-width: 900px;
             margin: 0 auto 3rem;
@@ -960,7 +984,7 @@
             font-weight: 700;
         }
 
-        /* --- ENGAGEMENT / AMBITION / FAQ / FOOTER / DOCK --- */
+        /* --- SECTION ENGAGEMENT --- */
         .engagement-section {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -991,6 +1015,7 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* --- SECTION AMBITION --- */
         .ambition-section {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -1032,7 +1057,7 @@
             color: var(--text-primary);
             font-weight: 700;
         }
-        
+
         @media (min-width: 900px) {
             .ambition-section {
                 flex-direction: row;
@@ -1049,7 +1074,7 @@
                 padding-left: 2rem;
             }
         }
-
+        
         @media (max-width: 899px) {
             .ambition-header {
                 border-bottom: 1px solid var(--glass-border);
@@ -1061,6 +1086,10 @@
             }
         }
 
+        /* ==========================================================================
+           11. SECTION FAQ
+           ========================================================================== */
+        
         .faq-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1139,6 +1168,10 @@
             transition: max-height 0.4s ease-in-out;
         }
 
+        /* ==========================================================================
+           9. FOOTER
+           ========================================================================== */
+        
         footer {
             padding: 6rem 1rem;
             text-align: center;
@@ -1167,6 +1200,10 @@
             opacity: 0.6;
         }
 
+        /* ==========================================================================
+           10. DOCK NAVIGATION
+           ========================================================================== */
+        
         .dock-nav {
             position: fixed;
             bottom: 30px;
@@ -1177,12 +1214,14 @@
             align-items: center;
             gap: 10px;
             padding: 12px 16px;
+            
             background: var(--dock-bg);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border: 1px solid var(--dock-border);
             border-radius: 100px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            
             transition: all 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
         }
 
@@ -1247,6 +1286,7 @@
             transform: translateY(0);
         }
 
+        /* --- CONTROL PANEL --- */
         .controls-panel {
             position: fixed;
             top: 2rem;
@@ -1293,6 +1333,7 @@
             transform: translateY(0);
         }
 
+        /* --- MEDIA QUERIES --- */
         @media (max-width: 640px) {
             .hero-title { font-size: 2.8rem; }
             .controls-panel { top: 1rem; right: 1rem; gap: 0.5rem; }
@@ -1344,6 +1385,39 @@
                 gap: 1rem;
             }
         }
+
+        /* --- SOBRE MODE OVERRIDES --- */
+        body.sober-mode .orb, 
+        body.sober-mode .cursor-glow { 
+            display: none !important; 
+        }
+        
+        body.sober-mode .gradient-text {
+            background: none;
+            -webkit-text-fill-color: var(--text-primary);
+            color: var(--text-primary);
+            filter: none;
+        }
+        
+        body.sober-mode .profile-image {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            background: white;
+            border-color: transparent;
+            animation: none;
+        }
+
+        body.sober-mode .btn-primary {
+            background: #1d1d1f;
+            color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        body.sober-mode .category-card:hover {
+            transform: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: white;
+            border-color: rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body id="home">
@@ -1389,24 +1463,19 @@
                     </div>
                 </div>
 
-                <!-- JOB TITLE EN H1 -->
                 <h1 class="hero-title">
-                    <span class="gradient-text" data-translate="hero_badge">Product Manager • Product Owner • Business Strategy</span>
+                    <span class="gradient-text" data-translate="hero_badge">Junior Product Manager • Product Owner</span>
                 </h1>
 
-                <!-- NOM EN SECOND PLAN -->
                 <div style="font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 700; color: var(--text-secondary); margin-bottom: 2rem; letter-spacing: 0.1em; text-transform: uppercase;">
                     FLORIAN BOUCHART
                 </div>
 
                 <p class="hero-description" data-translate="hero_description">
-                    Pourquoi choisir entre la rigueur d'un Chef de Projet et l'audace d'un Entrepreneur ? 
-                    Mon profil est la fusion des deux : <span class="highlight">structuré par le Delivery (GRDF)</span> et <span class="highlight">piloté par la Discovery (Desrèves)</span>. 
-                    Je suis le maillon manquant pour transformer votre vision en produit performant.
+                    Profil hybride alliant la rigueur analytique de la gestion de projet (<span class="highlight">GRDF</span>) et l'approche terrain d'un créateur d'entreprise (<span class="highlight">Desrèves</span>). Mon objectif : faire le pont entre les besoins utilisateurs, les enjeux business et la faisabilité technique.
                 </p>
 
                 <div class="cta-container">
-                    <!-- LE LIEN DU CV ICI CHANGE DYNAMIQUEMENT AVEC LE JS -->
                     <a href="https://image2url.com/r2/default/documents/1771509383048-d973961c-9a79-41df-93b7-2c19fc54c08f.pdf" target="_blank" class="btn btn-primary" id="cvLink">
                         <i data-lucide="file-text" width="20"></i>
                         <span class="cv-text" data-translate="btn_cv">Voir mon CV</span>
@@ -1428,7 +1497,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <h2 class="section-title gradient-text" data-translate="section_pro_title">EXPÉRIENCE & PROJETS</h2>
-                <p class="section-subtitle" data-translate="section_pro_subtitle">Mon parcours réel et ce qu'il m'apporte pour le produit</p>
+                <p class="section-subtitle" data-translate="section_pro_subtitle">Ce que mon parcours m'apporte pour le métier de PM/PO</p>
             </div>
 
             <div class="experience-grid">
@@ -1444,12 +1513,12 @@
                         </div>
                     </div>
                     <p class="exp-description" data-translate="exp_grdf_desc">
-                        Pilotage de la relation avec les collectivités locales. Ce n'est pas du produit pur, mais c'est l'école de la <strong>rigueur</strong> : gestion de projets longs, suivi de KPIs précis et négociation avec des parties prenantes exigeantes (élus). Des soft skills transférables immédiatement au rôle de PO.
+                        Gestion d'un portefeuille de collectivités locales. Bien que distinct du produit tech, j'y ai développé une forte rigueur analytique : suivi de KPIs, respect des engagements longs et alignement de parties prenantes (stakeholders) aux attentes complexes.
                     </p>
                     <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_kpi">Pilotage KPI</div>
-                        <div class="exp-tag" data-translate="tag_contracts">Gestion contrats</div>
-                        <div class="exp-tag" data-translate="tag_relations">Relations institutionnelles</div>
+                        <div class="exp-tag" data-translate="tag_kpi">Suivi de KPIs</div>
+                        <div class="exp-tag" data-translate="tag_stakeholders">Stakeholders Mgmt</div>
+                        <div class="exp-tag" data-translate="tag_relations">Communication B2B</div>
                         <div class="exp-tag" data-translate="tag_reporting">Reporting</div>
                     </div>
                 </div>
@@ -1460,20 +1529,19 @@
                             <img src="https://image2url.com/r2/default/images/1770846729486-db125a45-ffa2-476b-999b-dd9ab99bef16.png" alt="Desrèves Logo">
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--teal);" data-translate="exp_desreves_title">Fondateur (Discovery & Product Sense)</h3>
+                            <h3 style="color: var(--teal);" data-translate="exp_desreves_title">Fondateur (Discovery & Go-to-Market)</h3>
                             <div class="exp-period" data-translate="exp_desreves_period">2024 - Aujourd'hui</div>
-                            <div class="exp-company" style="color: var(--teal);" data-translate="exp_desreves_comp">Desrèves - Marque de vêtements</div>
+                            <div class="exp-company" style="color: var(--teal);" data-translate="exp_desreves_comp">Desrèves - E-commerce</div>
                         </div>
                     </div>
                     <p class="exp-description" data-translate="exp_desreves_desc">
-                        Ma première vraie expérience "Produit". J'ai tout créé de zéro : identité de marque, sourcing produits, site web (Liquid/CSS). J'apprends à écouter le marché, itérer sur mes collections et gérer le "Go-to-Market" complet d'un produit physique. L'école du pragmatisme et du ROI.
+                        Création d'une marque de A à Z. De la phase de recherche (comprendre le marché) au lancement (go-to-market), en passant par le sourcing et l'édition du site via Shopify (Liquid/CSS). Une expérience très concrète du cycle de vie d'un produit et du pilotage par le ROI.
                     </p>
                     <div class="exp-tags">
                         <div class="exp-tag" data-translate="tag_entrepreneurship">Entrepreneuriat</div>
-                        <div class="exp-tag" data-translate="tag_product_design">Design produit</div>
-                        <div class="exp-tag" data-translate="tag_web_dev">Dev web</div>
-                        <div class="exp-tag" data-translate="tag_suppliers">Gestion fournisseurs</div>
-                        <div class="exp-tag" data-translate="tag_marketing">Marketing</div>
+                        <div class="exp-tag" data-translate="tag_ecommerce">E-commerce</div>
+                        <div class="exp-tag" data-translate="tag_web_dev">HTML/CSS/Liquid</div>
+                        <div class="exp-tag" data-translate="tag_marketing">Go-to-Market</div>
                     </div>
                 </div>
 
@@ -1483,19 +1551,19 @@
                             <img src="https://image2url.com/r2/default/images/1770848861445-5b22e6f8-0fae-469e-8cc1-2bfe07855dca.png" alt="BDE IAE Logo">
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--purple);" data-translate="exp_bde_title">Président (Team Leadership)</h3>
+                            <h3 style="color: var(--purple);" data-translate="exp_bde_title">Président (Management transversal)</h3>
                             <div class="exp-period" data-translate="exp_bde_period">2022 - 2025 • 3 ans</div>
                             <div class="exp-company" style="color: var(--purple);">BDE IAE Valenciennes</div>
                         </div>
                     </div>
                     <p class="exp-description" data-translate="exp_bde_desc">
-                        Management d'une équipe bénévole. Comme un PO avec une équipe de dev, je n'avais pas de lien hiérarchique : j'ai dû fédérer par la vision et l'engagement. Gestion de budget stricte et gestion des risques événementiels.
+                        Direction d'une équipe de 20+ bénévoles. J'ai appris à fédérer autour d'un objectif commun sans lien de subordination, tout en pilotant un budget strict et en anticipant les risques opérationnels liés à l'événementiel.
                     </p>
                     <div class="exp-tags">
                         <div class="exp-tag" data-translate="tag_leadership">Leadership</div>
                         <div class="exp-tag" data-translate="tag_budget">Gestion budget</div>
                         <div class="exp-tag" data-translate="tag_events">Événementiel</div>
-                        <div class="exp-tag" data-translate="tag_team_mgmt">Management équipe</div>
+                        <div class="exp-tag" data-translate="tag_team_mgmt">Coordination d'équipe</div>
                     </div>
                 </div>
 
@@ -1505,18 +1573,18 @@
                             <i data-lucide="gamepad-2" width="32" style="color: white;"></i>
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--pink);" data-translate="exp_esport_title">Manager E-sport (Community)</h3>
+                            <h3 style="color: var(--pink);" data-translate="exp_esport_title">Manager E-sport (Communauté)</h3>
                             <div class="exp-period" data-translate="exp_esport_period">2018 - 2021 • Dès 15 ans</div>
                             <div class="exp-company" style="color: var(--pink);" data-translate="exp_esport_comp">Structure E-sport</div>
                         </div>
                     </div>
                     <p class="exp-description" data-translate="exp_esport_desc">
-                        Création et gestion d'une structure E-sport. Management de joueurs compétitifs (Talent Management), organisation de LANs et gestion de communauté. Ma première leçon sur l'importance de construire une communauté autour d'un projet.
+                        Création de structure et gestion de communauté en milieu compétitif. Recrutement de joueurs, suivi de performance (Talent management) et organisation logistique. L'apprentissage de la gestion d'équipe à distance.
                     </p>
                     <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_early_entrepreneurship">Entrepreneuriat précoce</div>
-                        <div class="exp-tag" data-translate="tag_management">Management</div>
-                        <div class="exp-tag" data-translate="tag_event_org">Organisation événements</div>
+                        <div class="exp-tag" data-translate="tag_community">Community Building</div>
+                        <div class="exp-tag" data-translate="tag_management">Management à distance</div>
+                        <div class="exp-tag" data-translate="tag_event_org">Organisation de tournois</div>
                     </div>
                 </div>
 
@@ -1543,9 +1611,9 @@
                         </div>
                     </div>
                     <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_mobility">Mobilité internationale</div>
-                        <div class="exp-tag" data-translate="tag_innovation">Innovation</div>
-                        <div class="exp-tag" data-translate="tag_design_thinking">Design Thinking</div>
+                        <div class="exp-tag" data-translate="tag_mobility">Expérience internationale</div>
+                        <div class="exp-tag" data-translate="tag_innovation">Innovation Process</div>
+                        <div class="exp-tag" data-translate="tag_design_thinking">User Research</div>
                     </div>
                 </div>
             </div>
@@ -1556,7 +1624,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <h2 class="section-title gradient-text" data-translate="section_vision_title">POURQUOI LE PRODUIT ?</h2>
-                <p class="section-subtitle" data-translate="section_vision_subtitle">La convergence logique de mon parcours</p>
+                <p class="section-subtitle" data-translate="section_vision_subtitle">La suite logique de mes expériences</p>
             </div>
 
             <div class="vision-grid">
@@ -1564,9 +1632,9 @@
                     <div class="vision-icon" style="background: linear-gradient(135deg, #00d4aa, #00a896);">
                         <i data-lucide="search" width="32"></i>
                     </div>
-                    <h3 style="color: var(--teal);" data-translate="vision_1_title">Fusion Projet & Produit</h3>
+                    <h3 style="color: var(--teal);" data-translate="vision_1_title">Delivery & Discovery</h3>
                     <p data-translate="vision_1_desc">
-                        En Gestion de Projet, j'ai appris le <strong>"Comment"</strong> (livrer à temps, budget). En Entrepreneuriat, j'ai appris le <strong>"Pourquoi"</strong> (valeur marché). Le Product Management est pour moi l'alliance parfaite de ces deux mondes : livrer de la valeur, pas juste des fonctionnalités.
+                        La gestion de projet m'a appris à structurer et livrer dans les temps. L'entrepreneuriat m'a appris à chercher le besoin et valider le marché. Le métier de PM/PO me permet de réunir ces deux aspects pour prioriser la valeur.
                     </p>
                 </div>
 
@@ -1574,9 +1642,9 @@
                     <div class="vision-icon" style="background: linear-gradient(135deg, #6a4c93, #8b5cf6);">
                         <i data-lucide="bar-chart-3" width="32"></i>
                     </div>
-                    <h3 style="color: var(--purple);" data-translate="vision_2_title">L'Approche Data</h3>
+                    <h3 style="color: var(--purple);" data-translate="vision_2_title">Pilotage par la Data</h3>
                     <p data-translate="vision_2_desc">
-                        Chez GRDF, je ne décide pas au doigt mouillé : je pilote mon portefeuille par la data. Je veux transposer cette rigueur analytique au produit pour valider des hypothèses utilisateurs et prioriser le backlog factuellement, pas émotionnellement.
+                        J'ai l'habitude d'appuyer mes décisions sur des données chiffrées. En produit, cela se traduit par la définition de KPIs pertinents, la mesure de l'adoption d'une feature et l'itération basée sur des retours factuels.
                     </p>
                 </div>
 
@@ -1584,9 +1652,9 @@
                     <div class="vision-icon" style="background: linear-gradient(135deg, #ff006e, #d00060);">
                         <i data-lucide="users" width="32"></i>
                     </div>
-                    <h3 style="color: var(--pink);" data-translate="vision_3_title">Design Thinking</h3>
+                    <h3 style="color: var(--pink);" data-translate="vision_3_title">Focus Utilisateur</h3>
                     <p data-translate="vision_3_desc">
-                        Mes expériences internationales m'ont formé au Design Thinking. J'ai appris une leçon fondamentale : ne pas sauter sur la solution technique, mais tomber amoureux du problème de l'utilisateur. C'est cet état d'esprit que je veux apporter à votre équipe.
+                        Mes études en Design Thinking m'ont appris l'importance de bien cadrer le problème (User Research) avant de rédiger des tickets ou de prototyper. Comprendre l'utilisateur final reste ma priorité.
                     </p>
                 </div>
 
@@ -1594,9 +1662,9 @@
                     <div class="vision-icon" style="background: linear-gradient(135deg, #ff6b35, #f77f00);">
                         <i data-lucide="cpu" width="32"></i>
                     </div>
-                    <h3 style="color: var(--orange);" data-translate="vision_4_title">Tech & IA</h3>
+                    <h3 style="color: var(--orange);" data-translate="vision_4_title">Sensibilité Technique</h3>
                     <p data-translate="vision_4_desc">
-                        Je ne suis pas développeur, mais je suis curieux et je "bricole" (Liquid, CSS, NoCode). Surtout, j'utilise l'IA pour automatiser mes tâches. Je peux comprendre les contraintes techniques et parler le même langage que les développeurs.
+                        Bien que non-développeur, je mets les mains dans les outils (CSS, Liquid, NoCode, automatisation via l'IA). Cela me permet de comprendre les enjeux d'architecture (Front/Back, API) et de fluidifier mes échanges avec la Tech.
                     </p>
                 </div>
             </div>
@@ -1606,40 +1674,36 @@
     <section id="atouts">
         <div class="container">
             <div class="section-header reveal">
-                <h2 class="section-title gradient-text" data-translate="section_atouts_title">MES ATOUTS & DÉFIS</h2>
-                <p class="section-subtitle" data-translate="section_atouts_subtitle">Transparence totale sur mon profil</p>
+                <h2 class="section-title gradient-text" data-translate="section_atouts_title">MES ATOUTS & AXES D'AMÉLIORATION</h2>
+                <p class="section-subtitle" data-translate="section_atouts_subtitle">Lucidité sur mon profil de Junior</p>
             </div>
 
             <div class="traits-container">
                 <div class="trait-card card-glass strengths reveal">
                     <div class="trait-header">
                         <i data-lucide="check-circle" width="30" style="color: var(--teal);"></i>
-                        <span class="trait-badge green" data-translate="lbl_forces">FORCES (ASSETS)</span>
+                        <span class="trait-badge green" data-translate="lbl_forces">MES ATOUTS</span>
                     </div>
                     <div class="trait-list">
                         <div class="trait-item" onclick="openDetail('force_1')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_1"><strong>Vision Transversale</strong> — Pont naturel entre Business, Tech et Client</span>
+                            <span data-translate="force_1"><strong>Compréhension globale</strong> — Aligner les visions Business, Tech et Utilisateur</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_2')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_2"><strong>Pragmatisme</strong> — Priorisation par la valeur et l'impact (ROI)</span>
+                            <span data-translate="force_2"><strong>Pragmatisme</strong> — Raisonnement en MVP et priorisation par l'impact (ROI)</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_3')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_3"><strong>Leadership d'influence</strong> — Fédérer sans lien hiérarchique</span>
+                            <span data-translate="force_3"><strong>Management transversal</strong> — Fédérer une équipe sans lien hiérarchique direct</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_4')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_4"><strong>Débrouillardise</strong> — Habitué à construire "From Scratch" (0 to 1)</span>
+                            <span data-translate="force_4"><strong>Autonomie</strong> — Culture du test & learn et débrouillardise acquises en e-commerce</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_5')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_5"><strong>Autonomie</strong> — Je n'attends pas qu'on me dise quoi faire</span>
-                        </div>
-                        <div class="trait-item" onclick="openDetail('force_6')">
-                            <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_6"><strong>Communication Claire</strong> — Traduction des enjeux complexes</span>
+                            <span data-translate="force_5"><strong>Communication fluide</strong> — Capacité à vulgariser des enjeux ou des process</span>
                         </div>
                     </div>
                 </div>
@@ -1647,32 +1711,28 @@
                 <div class="trait-card card-glass weaknesses reveal">
                     <div class="trait-header">
                         <i data-lucide="alert-circle" width="30" style="color: var(--yellow);"></i>
-                        <span class="trait-badge amber" data-translate="lbl_weaknesses">DÉFIS DE TRANSITION (REALITY CHECK)</span>
+                        <span class="trait-badge amber" data-translate="lbl_weaknesses">MES DÉFIS (AXES DE TRAVAIL)</span>
                     </div>
                     <div class="trait-list">
                         <div class="trait-item" onclick="openDetail('weak_1')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_1"><strong>Gestion du "Non"</strong> — Apprendre à dire non aux clients (vs dire oui en projet)</span>
+                            <span data-translate="weak_1"><strong>Savoir dire non</strong> — Protéger le backlog face aux demandes des parties prenantes</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_2')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_2"><strong>Biais de Solution</strong> — Tendance entrepreneuriale à vouloir "fixer" trop vite</span>
+                            <span data-translate="weak_2"><strong>Biais de solution</strong> — Me forcer à passer plus de temps sur le problème</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_3')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_3"><strong>Profondeur Technique</strong> — Je comprends la tech, mais je ne suis pas ingénieur</span>
+                            <span data-translate="weak_3"><strong>Vernis technique</strong> — Je dois encore approfondir ma connaissance des architectures complexes</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_4')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_4"><strong>Transition Outcome > Output</strong> — Ne plus juste livrer, mais impacter</span>
+                            <span data-translate="weak_4"><strong>Frameworks à l'échelle</strong> — Pratiquer l'Agile/Scrum au sein de grandes équipes Tech</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_5')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_5"><strong>Impatience constructive</strong> — Je dois apprendre à accepter le temps du produit</span>
-                        </div>
-                        <div class="trait-item" onclick="openDetail('weak_6')">
-                            <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_6"><strong>Délégation</strong> — Apprendre à faire faire plutôt que faire (syndrome fondateur)</span>
+                            <span data-translate="weak_5"><strong>Délégation</strong> — M'appuyer davantage sur les expertises (Devs, UX/UI) plutôt que faire seul</span>
                         </div>
                     </div>
                 </div>
@@ -1684,7 +1744,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <h2 class="section-title gradient-text" data-translate="section_skills_title">COMPÉTENCES</h2>
-                <p class="section-subtitle" data-translate="section_skills_subtitle">Ma boîte à outils</p>
+                <p class="section-subtitle" data-translate="section_skills_subtitle">Hard & Soft Skills</p>
             </div>
 
             <div class="skills-grid">
@@ -1695,12 +1755,11 @@
                     </h3>
                     <div class="skill-tags">
                         <div class="skill-tag" data-translate="skill_agile">Gestion de projet Agile</div>
-                        <div class="skill-tag">Product Strategy (Notions)</div>
-                        <div class="skill-tag">Gestion de Portefeuille</div>
-                        <div class="skill-tag" data-translate="skill_kpi">Pilotage KPI</div>
-                        <div class="skill-tag" data-translate="skill_risk">Gestion des risques</div>
-                        <div class="skill-tag" data-translate="skill_team">Coordination d'équipe</div>
-                        <div class="skill-tag" data-translate="skill_scrum">Scrum (théorique & pratique)</div>
+                        <div class="skill-tag">Priorisation de Backlog</div>
+                        <div class="skill-tag">User Stories & Tests d'acceptation</div>
+                        <div class="skill-tag" data-translate="skill_kpi">Définition de KPIs</div>
+                        <div class="skill-tag" data-translate="skill_team">Coordination transversale</div>
+                        <div class="skill-tag" data-translate="skill_scrum">Scrum (théorie fondamentale)</div>
                     </div>
                 </div>
 
@@ -1711,8 +1770,8 @@
                     </h3>
                     <div class="skill-tags">
                         <div class="skill-tag">Power BI</div>
-                        <div class="skill-tag" data-translate="skill_excel">Excel avancé (Macros, VBA)</div>
-                        <div class="skill-tag" data-translate="skill_dash">Tableaux de bord</div>
+                        <div class="skill-tag" data-translate="skill_excel">Excel (Macros, requêtes)</div>
+                        <div class="skill-tag" data-translate="skill_dash">Suivi de tableaux de bord</div>
                         <div class="skill-tag" data-translate="skill_data">Analyse de données</div>
                         <div class="skill-tag" data-translate="skill_control">Contrôle de gestion</div>
                     </div>
@@ -1724,27 +1783,25 @@
                         Digital & IA
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag" data-translate="skill_prompt">Prompting IA avancé</div>
-                        <div class="skill-tag" data-translate="skill_workflows">Workflows automatisés</div>
-                        <div class="skill-tag" data-translate="skill_digital">Digitalisation process</div>
-                        <div class="skill-tag">Marketing digital</div>
-                        <div class="skill-tag">RGPD</div>
-                        <div class="skill-tag">CRM</div>
+                        <div class="skill-tag" data-translate="skill_prompt">Prompting IA (Gain de temps)</div>
+                        <div class="skill-tag" data-translate="skill_workflows">Automatisation (NoCode)</div>
+                        <div class="skill-tag" data-translate="skill_digital">Optimisation de process</div>
+                        <div class="skill-tag">Outils Analytics</div>
+                        <div class="skill-tag">RGPD & Conformité</div>
                     </div>
                 </div>
 
                 <div class="skill-category card-glass reveal">
                     <h3 data-translate="skill_cat_tech">
                         <i data-lucide="code" width="24" style="color: var(--pink);"></i>
-                        Tech (Bases techniques)
+                        Tech (Vernis technique)
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag" data-translate="skill_css">CSS (Compréhension)</div>
+                        <div class="skill-tag" data-translate="skill_css">HTML / CSS (Notions)</div>
                         <div class="skill-tag" data-translate="skill_liquid">Liquid (Shopify)</div>
-                        <div class="skill-tag" data-translate="skill_r">R (bases)</div>
-                        <div class="skill-tag">VBA</div>
+                        <div class="skill-tag" data-translate="skill_r">Notions d'API & BDD</div>
                         <div class="skill-tag">Suite Adobe</div>
-                        <div class="skill-tag">Notion</div>
+                        <div class="skill-tag">Jira / Notion / Trello</div>
                     </div>
                 </div>
 
@@ -1754,12 +1811,11 @@
                         Soft Skills
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag">Leadership</div>
-                        <div class="skill-tag" data-translate="skill_com">Communication structurée</div>
-                        <div class="skill-tag" data-translate="skill_prob">Résolution de problèmes</div>
-                        <div class="skill-tag" data-translate="skill_result">Orientation résultat</div>
-                        <div class="skill-tag" data-translate="skill_listen">Écoute active</div>
-                        <div class="skill-tag" data-translate="skill_disc">Discipline</div>
+                        <div class="skill-tag">Esprit de synthèse</div>
+                        <div class="skill-tag" data-translate="skill_com">Communication inter-équipes</div>
+                        <div class="skill-tag" data-translate="skill_prob">Orientation solution</div>
+                        <div class="skill-tag" data-translate="skill_listen">Écoute active (User Research)</div>
+                        <div class="skill-tag" data-translate="skill_disc">Rigueur organisationnelle</div>
                     </div>
                 </div>
 
@@ -1802,32 +1858,28 @@
         </div>
     </section>
 
-    <!-- SECTION AMBITION (VERSION "DREAM JOB") -->
     <section id="ambition" class="reveal">
         <div class="container">
             <div class="ambition-section">
                 <div class="ambition-header">
                     <h3 data-translate="ambition_title">MON AMBITION</h3>
-                    <div class="ambition-subtitle" data-translate="ambition_subtitle">Le profil hybride qu'il vous faut</div>
+                    <div class="ambition-subtitle" data-translate="ambition_subtitle">Opérationnel et prêt à apprendre</div>
                 </div>
                 <div class="ambition-body">
                     <p class="ambition-text" data-translate="ambition_text">
-                        Pourquoi embaucher un profil standard quand vous pouvez avoir un hybride ? 
-                        Mon background en <strong>Gestion de Projet</strong> garantit que je sais livrer (Delivery). 
-                        Mon expérience d'<strong>Entrepreneur</strong> garantit que je comprends le business et le client (Discovery).
-                        Je suis prêt à apprendre les spécificités de votre framework, mais j'apporte dès le premier jour une autonomie, une rigueur et une énergie que vous ne trouverez pas ailleurs.
+                        En tant que profil junior, j'ai parfaitement conscience qu'il me reste des choses à apprendre sur les frameworks produit déployés à grande échelle. 
+                        Cependant, mes expériences en <strong>Gestion de Projet</strong> et en <strong>Création d'entreprise</strong> m'ont déjà doté des bons réflexes : <strong>structurer un besoin, prioriser la valeur (MVP), analyser des données chiffrées et aligner des équipes</strong>. Je suis prêt à intégrer vos méthodes et à apporter mon énergie dès le premier jour.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION FAQ / Q&A -->
     <section id="faq">
         <div class="container">
             <div class="section-header reveal">
-                <h2 class="section-title gradient-text" data-translate="section_faq_title">QUESTIONS FRÉQUENTES</h2>
-                <p class="section-subtitle" data-translate="section_faq_subtitle">Anticipons les détails logistiques</p>
+                <h2 class="section-title gradient-text" data-translate="section_faq_title">QUESTIONS LOGISTIQUES</h2>
+                <p class="section-subtitle" data-translate="section_faq_subtitle">Pour faciliter nos échanges</p>
             </div>
 
             <div class="faq-grid">
@@ -1858,7 +1910,7 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-body" data-translate="faq_a2">
-                            Je cible prioritairement <strong>Valenciennes et sa périphérie</strong> ainsi que <strong>Lille et sa métropole</strong>. Je reste ouvert aux opportunités sur <strong>Paris</strong>. Véhiculé.
+                            Je cible prioritairement <strong>Valenciennes et sa périphérie</strong> ainsi que <strong>Lille et sa métropole</strong>. Je reste ouvert aux opportunités sur <strong>Paris</strong>. Je suis véhiculé.
                         </div>
                     </div>
                 </div>
@@ -1874,7 +1926,7 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-body" data-translate="faq_a3">
-                            Je recherche un <strong>CDI</strong> pour m'investir sur le long terme en tant que Product Owner, Product Manager ou Chef de Projet Digital.
+                            Je recherche un <strong>CDI</strong> pour m'investir sur le long terme en tant que Junior Product Manager, Product Owner ou Chef de Projet Digital.
                         </div>
                     </div>
                 </div>
@@ -1890,7 +1942,7 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-body" data-translate="faq_a4">
-                            Les deux me conviennent. Je dispose d'un <strong>setup complet et ergonomique</strong> (Bureau assis-debout, micro perche, double écran) pour une productivité optimale.
+                            Les deux modalités me conviennent. Je dispose d'un <strong>espace de travail équipé</strong> (Bureau assis-debout, double écran) me permettant d'être pleinement opérationnel à distance.
                         </div>
                     </div>
                 </div>
@@ -1906,7 +1958,7 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-body" data-translate="faq_a5">
-                            Ouvert à la discussion selon le package global et les responsabilités, aligné sur le marché des profils Master 2 à l'IAE et avec 3 ans d'expérience alternance + entrepreneuriat.
+                            Je suis ouvert à la discussion selon le package global, aligné sur le marché des profils sortants de Master 2 avec environ 3 ans d'expérience cumulée (alternance et projets entrepreneuriaux).
                         </div>
                     </div>
                 </div>
@@ -1919,11 +1971,11 @@
         <div class="container">
             <div class="engagement-section">
                 <i data-lucide="message-circle-heart" width="48" style="color: var(--teal); margin-bottom: 1.5rem;"></i>
-                <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem;" data-translate="final_title">Le mot de la fin</h2>
+                <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem;" data-translate="final_title">Conclusion</h2>
                 <p class="engagement-text" data-translate="final_text">
-                    Je suis prêt à mettre mon énergie et mes compétences au service de votre produit.
-                    Mon parcours hybride est ma force : je comprends les projets, je maîtrise la donnée et j'ai l'esprit entrepreneurial.
-                    Rencontrons-nous pour discuter de la manière dont je peux contribuer à votre succès.
+                    La théorie est une base, mais c'est sur le terrain qu'un produit réussit ou échoue. 
+                    Mon parcours m'a appris à être méthodique avec les données et pragmatique avec les objectifs. 
+                    Je serais ravi d'échanger avec vous sur vos problématiques produit actuelles.
                 </p>
                 <div class="engagement-signature">Florian Bouchart</div>
             </div>
@@ -1981,13 +2033,13 @@
         let currentLang = 'fr';
         let soberMode = false;
 
-        // DICTIONNAIRE DE TRADUCTION ET DONNÉES COMPLÈTES (VERSION FINALE & CORRIGÉE)
+        // DICTIONNAIRE DE TRADUCTION ET DONNÉES COMPLÈTES
         const translations = {
             fr: {
                 sober_mode: "Clair",
                 availability_badge: "🟢 DISPONIBLE JUILLET 2026",
-                hero_badge: "Product Manager • Product Owner • Business Strategy",
-                hero_description: "Pourquoi choisir entre la rigueur d'un Chef de Projet et l'audace d'un Entrepreneur ? Mon profil est la fusion des deux : <span class=\"highlight\">structuré par le Delivery (GRDF)</span> et <span class=\"highlight\">piloté par la Discovery (Desrèves)</span>. Je suis le maillon manquant pour transformer votre vision en produit performant.",
+                hero_badge: "Junior Product Manager • Product Owner",
+                hero_description: "Profil hybride alliant la rigueur analytique de la gestion de projet (<span class=\"highlight\">GRDF</span>) et l'approche terrain d'un créateur d'entreprise (<span class=\"highlight\">Desrèves</span>). Mon objectif : faire le pont entre les besoins utilisateurs, les enjeux business et la faisabilité technique.",
                 btn_cv: "Voir mon CV",
                 cv_link: "https://image2url.com/r2/default/documents/1771509383048-d973961c-9a79-41df-93b7-2c19fc54c08f.pdf",
                 nav_home: "Accueil",
@@ -1997,105 +2049,101 @@
                 nav_ambition: "Ambition",
                 nav_contact: "Contact",
                 section_pro_title: "EXPÉRIENCE & PROJETS",
-                section_pro_subtitle: "Mon parcours réel et ce qu'il m'apporte pour le produit",
+                section_pro_subtitle: "Ce que mon parcours m'apporte pour le métier de PM/PO",
                 
                 exp_grdf_title: "Chargé de Portefeuille (Delivery & Stakeholders)",
                 exp_grdf_period: "2023 - 2026 • 3 ans",
-                exp_grdf_desc: "Pilotage de la relation avec les collectivités locales. Ce n'est pas du produit pur, mais c'est l'école de la <strong>rigueur</strong> : gestion de projets longs, suivi de KPIs précis et négociation avec des parties prenantes exigeantes (élus). Des soft skills transférables immédiatement au rôle de PO.",
-                tag_kpi: "Pilotage KPI",
-                tag_contracts: "Gestion contrats",
-                tag_relations: "Relations institutionnelles",
+                exp_grdf_desc: "Gestion d'un portefeuille de collectivités locales. Bien que distinct du produit tech, j'y ai développé une forte rigueur analytique : suivi de KPIs, respect des engagements longs et alignement de parties prenantes (stakeholders) aux attentes complexes.",
+                tag_kpi: "Suivi de KPIs",
+                tag_stakeholders: "Stakeholders Mgmt",
+                tag_relations: "Communication B2B",
                 tag_reporting: "Reporting",
                 
-                exp_desreves_title: "Fondateur (Discovery & Product Sense)",
+                exp_desreves_title: "Fondateur (Discovery & Go-to-Market)",
                 exp_desreves_period: "2024 - Aujourd'hui",
-                exp_desreves_comp: "Desrèves - Marque de vêtements",
-                exp_desreves_desc: "Ma première vraie expérience \"Produit\". J'ai tout créé de zéro : identité de marque, sourcing produits, site web (Liquid/CSS). J'apprends à écouter le marché, itérer sur mes collections et gérer le \"Go-to-Market\" complet d'un produit physique. L'école du pragmatisme et du ROI.",
+                exp_desreves_comp: "Desrèves - E-commerce",
+                exp_desreves_desc: "Création d'une marque de A à Z. De la phase de recherche (comprendre le marché) au lancement (go-to-market), en passant par le sourcing et l'édition du site via Shopify (Liquid/CSS). Une expérience très concrète du cycle de vie d'un produit et du pilotage par le ROI.",
                 tag_entrepreneurship: "Entrepreneuriat",
-                tag_product_design: "Design produit",
-                tag_web_dev: "Dev web",
-                tag_suppliers: "Gestion fournisseurs",
-                tag_marketing: "Marketing",
+                tag_ecommerce: "E-commerce",
+                tag_web_dev: "HTML/CSS/Liquid",
+                tag_marketing: "Go-to-Market",
                 
-                exp_bde_title: "Président (Team Leadership)",
+                exp_bde_title: "Président (Management transversal)",
                 exp_bde_period: "2022 - 2025 • 3 ans",
-                exp_bde_desc: "Management d'une équipe bénévole. Comme un PO avec une équipe de dev, je n'avais pas de lien hiérarchique : j'ai dû fédérer par la vision et l'engagement. Gestion de budget stricte et gestion des risques événementiels.",
+                exp_bde_desc: "Direction d'une équipe de 20+ bénévoles. J'ai appris à fédérer autour d'un objectif commun sans lien de subordination, tout en pilotant un budget strict et en anticipant les risques opérationnels liés à l'événementiel.",
                 tag_leadership: "Leadership",
                 tag_budget: "Gestion budget",
                 tag_events: "Événementiel",
-                tag_team_mgmt: "Management équipe",
+                tag_team_mgmt: "Coordination d'équipe",
                 
-                exp_esport_title: "Manager E-sport (Community)",
+                exp_esport_title: "Manager E-sport (Communauté)",
                 exp_esport_period: "2018 - 2021 • Dès 15 ans",
                 exp_esport_comp: "Structure E-sport",
-                exp_esport_desc: "Création et gestion d'une structure E-sport. Management de joueurs compétitifs (Talent Management), organisation de LANs et gestion de communauté. Ma première leçon sur l'importance de construire une communauté autour d'un projet.",
-                tag_early_entrepreneurship: "Entrepreneuriat précoce",
-                tag_management: "Management",
-                tag_event_org: "Organisation événements",
+                exp_esport_desc: "Création de structure et gestion de communauté en milieu compétitif. Recrutement de joueurs, suivi de performance (Talent management) et organisation logistique. L'apprentissage de la gestion d'équipe à distance.",
+                tag_community: "Community Building",
+                tag_management: "Management à distance",
+                tag_event_org: "Organisation de tournois",
                 
                 exp_intl_title: "Design Thinking & Innovation",
                 exp_intl_comp: "Finlande & Roumanie",
                 exp_intl_desc: "<strong>🇫🇮 Vaasa, Finlande</strong> - Entrepreneurship and Venturing (Vaasan yliopisto)<br><strong>🇷🇴 Cluj-Napoca, Roumanie</strong> - Innovation, Design-Thinking and Entrepreneurship (Universitatea Babes-Bolyai)",
-                tag_mobility: "Mobilité internationale",
-                tag_innovation: "Innovation",
-                tag_design_thinking: "Design Thinking",
+                tag_mobility: "Expérience internationale",
+                tag_innovation: "Innovation Process",
+                tag_design_thinking: "User Research",
                 
                 section_vision_title: "POURQUOI LE PRODUIT ?",
-                section_vision_subtitle: "La convergence logique de mon parcours",
-                vision_1_title: "Fusion Projet & Produit",
-                vision_1_desc: "En Gestion de Projet, j'ai appris le <strong>\"Comment\"</strong> (livrer à temps, budget). En Entrepreneuriat, j'ai appris le <strong>\"Pourquoi\"</strong> (valeur marché). Le Product Management est pour moi l'alliance parfaite de ces deux mondes : livrer de la valeur, pas juste des fonctionnalités.",
-                vision_2_title: "L'Approche Data",
-                vision_2_desc: "Chez GRDF, je ne décide pas au doigt mouillé : je pilote mon portefeuille par la data. Je veux transposer cette rigueur analytique au produit pour valider des hypothèses utilisateurs et prioriser le backlog factuellement, pas émotionnellement.",
-                vision_3_title: "Design Thinking",
-                vision_3_desc: "Mes expériences internationales m'ont formé au Design Thinking. J'ai appris une leçon fondamentale : ne pas sauter sur la solution technique, mais tomber amoureux du problème de l'utilisateur. C'est cet état d'esprit que je veux apporter à votre équipe.",
-                vision_4_title: "Tech & IA",
-                vision_4_desc: "Je ne suis pas développeur, mais je suis curieux et je \"bricole\" (Liquid, CSS, NoCode). Surtout, j'utilise l'IA pour automatiser mes tâches. Je peux comprendre les contraintes techniques et parler le même langage que les développeurs.",
+                section_vision_subtitle: "La suite logique de mes expériences",
+                vision_1_title: "Delivery & Discovery",
+                vision_1_desc: "La gestion de projet m'a appris à structurer et livrer dans les temps. L'entrepreneuriat m'a appris à chercher le besoin et valider le marché. Le métier de PM/PO me permet de réunir ces deux aspects pour prioriser la valeur.",
+                vision_2_title: "Pilotage par la Data",
+                vision_2_desc: "J'ai l'habitude d'appuyer mes décisions sur des données chiffrées. En produit, cela se traduit par la définition de KPIs pertinents, la mesure de l'adoption d'une feature et l'itération basée sur des retours factuels.",
+                vision_3_title: "Focus Utilisateur",
+                vision_3_desc: "Mes études en Design Thinking m'ont appris l'importance de bien cadrer le problème (User Research) avant de rédiger des tickets ou de prototyper. Comprendre l'utilisateur final reste ma priorité.",
+                vision_4_title: "Sensibilité Technique",
+                vision_4_desc: "Bien que non-développeur, je mets les mains dans les outils (CSS, Liquid, NoCode, automatisation via l'IA). Cela me permet de comprendre les enjeux d'architecture (Front/Back, API) et de fluidifier mes échanges avec la Tech.",
                 
-                section_atouts_title: "MES ATOUTS & DÉFIS",
-                section_atouts_subtitle: "Transparence totale sur mon profil",
-                lbl_forces: "FORCES (ASSETS)",
-                lbl_weaknesses: "DÉFIS DE TRANSITION (REALITY CHECK)",
+                section_atouts_title: "MES ATOUTS & AXES D'AMÉLIORATION",
+                section_atouts_subtitle: "Lucidité sur mon profil de Junior",
+                lbl_forces: "MES ATOUTS",
+                lbl_weaknesses: "MES DÉFIS (AXES DE TRAVAIL)",
                 
-                force_1: "<strong>Vision Transversale</strong> — Pont naturel entre Business, Tech et Client",
-                force_2: "<strong>Pragmatisme</strong> — Priorisation par la valeur et l'impact (ROI)",
-                force_3: "<strong>Leadership d'influence</strong> — Fédérer sans lien hiérarchique",
-                force_4: "<strong>Débrouillardise</strong> — Habitué à construire \"From Scratch\" (0 to 1)",
-                force_5: "<strong>Autonomie</strong> — Je n'attends pas qu'on me dise quoi faire",
-                force_6: "<strong>Communication Claire</strong> — Traduction des enjeux complexes",
+                force_1: "<strong>Compréhension globale</strong> — Aligner les visions Business, Tech et Utilisateur",
+                force_2: "<strong>Pragmatisme</strong> — Raisonnement en MVP et priorisation par l'impact (ROI)",
+                force_3: "<strong>Management transversal</strong> — Fédérer une équipe sans lien hiérarchique direct",
+                force_4: "<strong>Autonomie</strong> — Culture du test & learn et débrouillardise acquises en e-commerce",
+                force_5: "<strong>Communication fluide</strong> — Capacité à vulgariser des enjeux ou des process",
                 
-                weak_1: "<strong>Gestion du \"Non\"</strong> — Apprendre à dire non aux clients (vs dire oui en projet)",
-                weak_2: "<strong>Biais de Solution</strong> — Tendance entrepreneuriale à vouloir \"fixer\" trop vite",
-                weak_3: "<strong>Profondeur Technique</strong> — Je comprends la tech, mais je ne suis pas ingénieur",
-                weak_4: "<strong>Transition Outcome > Output</strong> — Ne plus juste livrer, mais impacter",
-                weak_5: "<strong>Impatience constructive</strong> — Je dois apprendre à accepter le temps du produit",
-                weak_6: "<strong>Délégation</strong> — Apprendre à faire faire plutôt que faire (syndrome fondateur)",
+                weak_1: "<strong>Savoir dire non</strong> — Protéger le backlog face aux demandes des parties prenantes",
+                weak_2: "<strong>Biais de solution</strong> — Me forcer à passer plus de temps sur le problème",
+                weak_3: "<strong>Vernis technique</strong> — Je dois encore approfondir ma connaissance des architectures complexes",
+                weak_4: "<strong>Frameworks à l'échelle</strong> — Pratiquer l'Agile/Scrum au sein de grandes équipes Tech",
+                weak_5: "<strong>Délégation</strong> — M'appuyer davantage sur les expertises (Devs, UX/UI) plutôt que faire seul",
                 
                 section_skills_title: "COMPÉTENCES",
-                section_skills_subtitle: "Maîtrises techniques et soft skills",
+                section_skills_subtitle: "Hard & Soft Skills",
                 skill_cat_mgmt: "<i data-lucide='briefcase' width='24' style='color: var(--orange);'></i> Gestion de Projet & Produit",
                 skill_cat_data: "<i data-lucide='bar-chart-3' width='24' style='color: var(--purple);'></i> Data & Analyse",
-                skill_cat_tech: "<i data-lucide='code' width='24' style='color: var(--pink);'></i> Tech (Bases techniques)",
+                skill_cat_tech: "<i data-lucide='code' width='24' style='color: var(--pink);'></i> Tech (Vernis technique)",
                 skill_cat_lang: "<i data-lucide='globe' width='24' style='color: var(--teal);'></i> Langues",
                 skill_agile: "Gestion de projet Agile",
-                skill_kpi: "Pilotage KPI",
+                skill_kpi: "Définition de KPIs",
                 skill_risk: "Gestion des risques",
-                skill_team: "Coordination d'équipe",
-                skill_scrum: "Scrum (théorique & pratique)",
-                skill_excel: "Excel avancé (Macros, VBA)",
-                skill_dash: "Tableaux de bord",
+                skill_team: "Coordination transversale",
+                skill_scrum: "Scrum (théorie fondamentale)",
+                skill_excel: "Excel (Macros, requêtes)",
+                skill_dash: "Suivi de tableaux de bord",
                 skill_data: "Analyse de données",
                 skill_control: "Contrôle de gestion",
-                skill_prompt: "Prompting IA avancé",
-                skill_workflows: "Workflows automatisés",
-                skill_digital: "Digitalisation process",
-                skill_css: "CSS (Compréhension)",
+                skill_prompt: "Prompting IA (Gain de temps)",
+                skill_workflows: "Automatisation (NoCode)",
+                skill_digital: "Optimisation de process",
+                skill_css: "HTML / CSS (Notions)",
                 skill_liquid: "Liquid (Shopify)",
-                skill_r: "R (bases)",
-                skill_com: "Communication structurée",
-                skill_prob: "Résolution de problèmes",
-                skill_result: "Orientation résultat",
-                skill_listen: "Écoute active",
-                skill_disc: "Discipline",
+                skill_r: "Notions d'API & BDD",
+                skill_com: "Communication inter-équipes",
+                skill_prob: "Orientation solution",
+                skill_listen: "Écoute active (User Research)",
+                skill_disc: "Rigueur organisationnelle",
                 lang_fr: "🇫🇷 Français (Natif)",
                 lang_en: "🇬🇧 Anglais (B2)",
                 lang_es: "🇪🇸 Espagnol (A2)",
@@ -2105,24 +2153,24 @@
                 search_placeholder: "Rechercher un cours (ex: Scrum, Marketing, RGPD...)",
                 
                 ambition_title: "MON AMBITION",
-                ambition_subtitle: "Le profil hybride qu'il vous faut",
-                ambition_text: "Pourquoi embaucher un profil standard quand vous pouvez avoir un hybride ? Mon background en <strong>Gestion de Projet</strong> garantit que je sais livrer (Delivery). Mon expérience d'<strong>Entrepreneur</strong> garantit que je comprends le business et le client (Discovery). Je suis prêt à apprendre les spécificités de votre framework, mais j'apporte dès le premier jour une autonomie, une rigueur et une énergie que vous ne trouverez pas ailleurs.",
+                ambition_subtitle: "Opérationnel et prêt à apprendre",
+                ambition_text: "En tant que profil junior, j'ai parfaitement conscience qu'il me reste des choses à apprendre sur les frameworks produit déployés à grande échelle. Cependant, mes expériences en <strong>Gestion de Projet</strong> et en <strong>Création d'entreprise</strong> m'ont déjà doté des bons réflexes : <strong>structurer un besoin, prioriser la valeur (MVP), analyser des données chiffrées et aligner des équipes</strong>. Je suis prêt à intégrer vos méthodes et à apporter mon énergie dès le premier jour.",
                 
-                section_faq_title: "QUESTIONS FRÉQUENTES",
-                section_faq_subtitle: "Anticipons les détails logistiques",
+                section_faq_title: "QUESTIONS LOGISTIQUES",
+                section_faq_subtitle: "Pour faciliter nos échanges",
                 faq_q1: "Quand êtes-vous disponible ?",
                 faq_a1: "Je serai diplômé de mon Master 2 et fin de contrat d'alternance fin juin. Je suis donc <strong>disponible dès début Juillet 2026</strong>.",
                 faq_q2: "Quelle est votre zone de mobilité ?",
-                faq_a2: "Je cible prioritairement <strong>Valenciennes et sa périphérie</strong> ainsi que <strong>Lille et sa métropole</strong>. Je reste ouvert aux opportunités sur <strong>Paris</strong>. Véhiculé.",
+                faq_a2: "Je cible prioritairement <strong>Valenciennes et sa périphérie</strong> ainsi que <strong>Lille et sa métropole</strong>. Je reste ouvert aux opportunités sur <strong>Paris</strong>. Je suis véhiculé.",
                 faq_q3: "Quel type de contrat recherchez-vous ?",
-                faq_a3: "Je recherche un <strong>CDI</strong> pour m'investir sur le long terme en tant que Product Owner, Product Manager ou Chef de Projet Digital.",
+                faq_a3: "Je recherche un <strong>CDI</strong> pour m'investir sur le long terme en tant que Junior Product Manager, Product Owner ou Chef de Projet Digital.",
                 faq_q4: "Télétravail : Full ou Hybride ?",
-                faq_a4: "Les deux me conviennent. Je dispose d'un <strong>setup complet et ergonomique</strong> (Bureau assis-debout, micro perche, double écran) pour une productivité optimale.",
+                faq_a4: "Les deux modalités me conviennent. Je dispose d'un <strong>espace de travail équipé</strong> (Bureau assis-debout, double écran) me permettant d'être pleinement opérationnel à distance.",
                 faq_q5: "Quelles sont vos prétentions salariales ?",
-                faq_a5: "Ouvert à la discussion selon le package global et les responsabilités, aligné sur le marché des profils Master 2 à l'IAE et avec 3 ans d'expérience alternance + entrepreneuriat.",
+                faq_a5: "Je suis ouvert à la discussion selon le package global, aligné sur le marché des profils sortants de Master 2 avec environ 3 ans d'expérience cumulée (alternance et projets entrepreneuriaux).",
 
-                final_title: "Le mot de la fin",
-                final_text: "Je suis prêt à mettre mon énergie et mes compétences au service de votre produit. Mon parcours hybride est ma force : je comprends les projets, je maîtrise la donnée et j'ai l'esprit entrepreneurial. Rencontrons-nous pour discuter de la manière dont je peux contribuer à votre succès.",
+                final_title: "Conclusion",
+                final_text: "La théorie est une base, mais c'est sur le terrain qu'un produit réussit ou échoue. Mon parcours m'a appris à être méthodique avec les données et pragmatique avec les objectifs. Je serais ravi d'échanger avec vous sur vos problématiques produit actuelles.",
 
                 footer_title: "Construisons ensemble",
                 footer_copyright: "© 2026 Florian Bouchart • Portfolio"
@@ -2130,8 +2178,8 @@
             en: {
                 sober_mode: "Light",
                 availability_badge: "🟢 AVAILABLE JULY 2026",
-                hero_badge: "Product Manager • Product Owner • Business Strategy",
-                hero_description: "Why choose between the rigor of a Project Manager and the boldness of an Entrepreneur? My profile fuses both: <span class=\"highlight\">structured by Delivery (GRDF)</span> and <span class=\"highlight\">driven by Discovery (Desrèves)</span>. I am the missing link to turn your vision into a performing product.",
+                hero_badge: "Junior Product Manager • Product Owner",
+                hero_description: "Hybrid profile combining the analytical rigor of project management (<span class=\"highlight\">GRDF</span>) and the hands-on approach of a founder (<span class=\"highlight\">Desrèves</span>). My goal: bridging the gap between user needs, business goals, and technical feasibility.",
                 btn_cv: "View Resume",
                 cv_link: "https://image2url.com/r2/default/documents/1771509404698-73bd3b1c-401e-4e45-a83d-5c40c38d9f6b.pdf",
                 nav_home: "Home",
@@ -2140,106 +2188,102 @@
                 nav_edu: "Education",
                 nav_ambition: "Ambition",
                 nav_contact: "Contact",
-                section_pro_title: "CAREER & SKILLS",
-                section_pro_subtitle: "My real background and what it brings to Product",
+                section_pro_title: "EXPERIENCE & PROJECTS",
+                section_pro_subtitle: "How my background translates to a PM/PO role",
                 
                 exp_grdf_title: "Portfolio Manager (Delivery & Stakeholders)",
                 exp_grdf_period: "2023 - 2026 • 3 years",
-                exp_grdf_desc: "Managing relationships with local authorities. Not pure product, but the school of <strong>rigor</strong>: managing long-term projects, tracking precise KPIs, and negotiating with demanding stakeholders (officials). Soft skills immediately transferable to a PO role.",
-                tag_kpi: "KPI Management",
-                tag_contracts: "Contract Mgmt",
-                tag_relations: "Institutional Relations",
+                exp_grdf_desc: "Managing a portfolio of local authorities. Although distinct from tech product management, I developed strong analytical rigor: tracking KPIs, meeting long-term commitments, and aligning stakeholders with complex expectations.",
+                tag_kpi: "KPI Tracking",
+                tag_stakeholders: "Stakeholder Mgmt",
+                tag_relations: "B2B Communication",
                 tag_reporting: "Reporting",
                 
-                exp_desreves_title: "Founder (Discovery & Product Sense)",
+                exp_desreves_title: "Founder (Discovery & Go-to-Market)",
                 exp_desreves_period: "2024 - Present",
-                exp_desreves_comp: "Desrèves - Clothing Brand",
-                exp_desreves_desc: "My first real \"Product\" experience. I built everything from scratch: brand identity, sourcing, website (Liquid/CSS). I am learning to listen to the market, iterate collections, and manage the full \"Go-to-Market\" of a physical product. The school of pragmatism and ROI.",
+                exp_desreves_comp: "Desrèves - E-commerce",
+                exp_desreves_desc: "Creating a brand from scratch. From the research phase (market discovery) to launch (go-to-market), including sourcing and editing the website via Shopify (Liquid/CSS). A very concrete experience of a product's lifecycle and ROI-driven management.",
                 tag_entrepreneurship: "Entrepreneurship",
-                tag_product_design: "Product Design",
-                tag_web_dev: "Web Dev",
-                tag_suppliers: "Supplier Mgmt",
-                tag_marketing: "Marketing",
+                tag_ecommerce: "E-commerce",
+                tag_web_dev: "HTML/CSS/Liquid",
+                tag_marketing: "Go-to-Market",
                 
-                exp_bde_title: "President (Team Leadership)",
+                exp_bde_title: "President (Cross-functional Management)",
                 exp_bde_period: "2022 - 2025 • 3 years",
-                exp_bde_desc: "Leading a volunteer team. Like a PO with a dev team, I had no hierarchical authority: I had to unite people through vision and engagement. Strict budget management and event risk management.",
+                exp_bde_desc: "Leading a team of 20+ volunteers. I learned to unite people around a common goal without hierarchical authority, while managing a strict budget and anticipating operational risks related to events.",
                 tag_leadership: "Leadership",
                 tag_budget: "Budget Mgmt",
                 tag_events: "Event Planning",
-                tag_team_mgmt: "Team Mgmt",
+                tag_team_mgmt: "Team Coordination",
                 
                 exp_esport_title: "E-sport Manager (Community)",
                 exp_esport_period: "2018 - 2021 • From age 15",
                 exp_esport_comp: "E-sport Organization",
-                exp_esport_desc: "Creating and managing an E-sport structure. Managing competitive players (Talent Management), organizing LANs, and community management. My first lesson on the importance of building a community around a project.",
-                tag_early_entrepreneurship: "Early Entrepreneurship",
-                tag_management: "Management",
-                tag_event_org: "Event Organization",
+                exp_esport_desc: "Creating an organization and managing a community in a competitive environment. Player recruitment, performance tracking (Talent management), and logistics. Learning remote team management.",
+                tag_community: "Community Building",
+                tag_management: "Remote Management",
+                tag_event_org: "Tournament Org",
                 
                 exp_intl_title: "Design Thinking & Innovation",
                 exp_intl_comp: "Finland & Romania",
                 exp_intl_desc: "<strong>🇫🇮 Vaasa, Finland</strong> - Entrepreneurship and Venturing (Vaasan yliopisto)<br><strong>🇷🇴 Cluj-Napoca, Romania</strong> - Innovation, Design-Thinking and Entrepreneurship (Universitatea Babes-Bolyai)",
-                tag_mobility: "International Mobility",
-                tag_innovation: "Innovation",
-                tag_design_thinking: "Design Thinking",
+                tag_mobility: "International Experience",
+                tag_innovation: "Innovation Process",
+                tag_design_thinking: "User Research",
                 
                 section_vision_title: "WHY PRODUCT?",
-                section_vision_subtitle: "The logical convergence of my path",
-                vision_1_title: "Project & Product Fusion",
-                vision_1_desc: "In Project Management, I learned <strong>\"How\"</strong> (deliver on time, budget). In Entrepreneurship, I learned <strong>\"Why\"</strong> (market value). Product Management is the perfect alliance of these two worlds for me: delivering value, not just features.",
-                vision_2_title: "The Data Approach",
-                vision_2_desc: "At GRDF, I don't guess: I steer my portfolio with data. I want to transpose this analytical rigor to product to validate user hypotheses and prioritize the backlog factually, not emotionally.",
-                vision_3_title: "Design Thinking",
-                vision_3_desc: "My international experiences trained me in Design Thinking. I learned a fundamental lesson: don't jump to the tech solution, but fall in love with the user's problem. This is the mindset I want to bring to your team.",
-                vision_4_title: "Tech & AI",
-                vision_4_desc: "I'm not a developer, but I'm curious and I \"tinker\" (Liquid, CSS, NoCode). Above all, I use AI to automate my tasks. I can understand technical constraints and speak the same language as developers.",
+                section_vision_subtitle: "The logical next step in my career",
+                vision_1_title: "Delivery & Discovery",
+                vision_1_desc: "Project management taught me how to structure and deliver on time. Entrepreneurship taught me how to find the need and validate the market. The PM/PO role allows me to combine these to prioritize value.",
+                vision_2_title: "Data-Driven Approach",
+                vision_2_desc: "I am used to basing my decisions on numbers. In product, this translates to defining relevant KPIs, measuring feature adoption, and iterating based on factual feedback.",
+                vision_3_title: "User Focus",
+                vision_3_desc: "My studies in Design Thinking taught me the importance of properly framing the problem (User Research) before writing tickets or prototyping. Understanding the end-user remains my priority.",
+                vision_4_title: "Technical Awareness",
+                vision_4_desc: "While not a developer, I am hands-on with tools (CSS, Liquid, NoCode, AI automation). This helps me understand architectural challenges (Front/Back, APIs) and streamline discussions with the Tech team.",
                 
-                section_atouts_title: "MY STRENGTHS & CHALLENGES",
-                section_atouts_subtitle: "Full transparency on my profile",
+                section_atouts_title: "STRENGTHS & AREAS FOR GROWTH",
+                section_atouts_subtitle: "Self-awareness as a Junior",
                 lbl_forces: "MY STRENGTHS",
-                lbl_weaknesses: "TRANSITION CHALLENGES",
+                lbl_weaknesses: "MY CHALLENGES (TO WORK ON)",
                 
-                force_1: "<strong>Cross-functional Vision</strong> — Natural bridge between Business, Tech, and Client",
-                force_2: "<strong>Pragmatism</strong> — Prioritization by value and impact (ROI)",
-                force_3: "<strong>Influential Leadership</strong> — Uniting without hierarchy",
-                force_4: "<strong>Resourcefulness</strong> — Used to building \"From Scratch\" (0 to 1)",
-                force_5: "<strong>Autonomy</strong> — I don't wait to be told what to do",
-                force_6: "<strong>Clear Communication</strong> — Translating complex issues",
+                force_1: "<strong>Holistic Understanding</strong> — Aligning Business, Tech, and User visions",
+                force_2: "<strong>Pragmatism</strong> — MVP mindset and prioritization by impact (ROI)",
+                force_3: "<strong>Cross-functional Management</strong> — Uniting a team without direct hierarchical links",
+                force_4: "<strong>Autonomy</strong> — Test & learn culture and resourcefulness gained in e-commerce",
+                force_5: "<strong>Clear Communication</strong> — Ability to simplify complex issues or processes",
                 
-                weak_1: "<strong>Saying \"No\"</strong> — Learning to say no to clients (vs saying yes in Project Mgmt)",
-                weak_2: "<strong>Solution Bias</strong> — Entrepreneurial tendency to want to \"fix\" too fast",
-                weak_3: "<strong>Technical Depth</strong> — I understand tech, but I am not an engineer",
-                weak_4: "<strong>Outcome > Output</strong> — Not just delivering, but impacting",
-                weak_5: "<strong>Constructive Impatience</strong> — Learning to accept product timelines",
-                weak_6: "<strong>Delegation</strong> — Learning to let others do (Founder syndrome)",
+                weak_1: "<strong>Saying No</strong> — Protecting the backlog from stakeholder requests",
+                weak_2: "<strong>Solution Bias</strong> — Forcing myself to spend more time on the problem",
+                weak_3: "<strong>Technical Depth</strong> — I still need to deepen my knowledge of complex architectures",
+                weak_4: "<strong>Frameworks at Scale</strong> — Practicing Agile/Scrum within large Tech teams",
+                weak_5: "<strong>Delegation</strong> — Relying more on expertise (Devs, UX/UI) rather than doing it alone",
                 
                 section_skills_title: "SKILLS",
-                section_skills_subtitle: "Technical mastery and soft skills",
+                section_skills_subtitle: "Hard & Soft Skills",
                 skill_cat_mgmt: "<i data-lucide='briefcase' width='24' style='color: var(--orange);'></i> Project & Product Mgmt",
                 skill_cat_data: "<i data-lucide='bar-chart-3' width='24' style='color: var(--purple);'></i> Data & Analysis",
-                skill_cat_tech: "<i data-lucide='code' width='24' style='color: var(--pink);'></i> Tech (Basics)",
+                skill_cat_tech: "<i data-lucide='code' width='24' style='color: var(--pink);'></i> Tech (Awareness)",
                 skill_cat_lang: "<i data-lucide='globe' width='24' style='color: var(--teal);'></i> Languages",
                 skill_agile: "Agile Project Mgmt",
-                skill_kpi: "KPI Management",
+                skill_kpi: "KPI Definition",
                 skill_risk: "Risk Management",
-                skill_team: "Team Coordination",
-                skill_scrum: "Scrum (Theory & Practice)",
-                skill_excel: "Advanced Excel (Macros, VBA)",
-                skill_dash: "Dashboards",
+                skill_team: "Cross-functional Coord.",
+                skill_scrum: "Scrum (Fundamentals)",
+                skill_excel: "Excel (Macros, queries)",
+                skill_dash: "Dashboard Tracking",
                 skill_data: "Data Analysis",
                 skill_control: "Management Control",
-                skill_prompt: "Advanced AI Prompting",
-                skill_workflows: "Automated Workflows",
-                skill_digital: "Process Digitalization",
-                skill_css: "CSS (Understanding)",
+                skill_prompt: "AI Prompting (Efficiency)",
+                skill_workflows: "Automation (NoCode)",
+                skill_digital: "Process Optimization",
+                skill_css: "HTML / CSS (Basics)",
                 skill_liquid: "Liquid (Shopify)",
-                skill_r: "R (basics)",
-                skill_com: "Structured Communication",
-                skill_prob: "Problem Solving",
-                skill_result: "Result Oriented",
-                skill_listen: "Active Listening",
-                skill_disc: "Discipline",
+                skill_r: "API & DB Basics",
+                skill_com: "Cross-team Comm.",
+                skill_prob: "Solution Oriented",
+                skill_listen: "Active Listening (User Research)",
+                skill_disc: "Organizational Rigor",
                 lang_fr: "🇫🇷 French (Native)",
                 lang_en: "🇬🇧 English (B2)",
                 lang_es: "🇪🇸 Spanish (A2)",
@@ -2249,24 +2293,24 @@
                 search_placeholder: "Search for a course (e.g., Scrum, Marketing, GDPR...)",
                 
                 ambition_title: "MY AMBITION",
-                ambition_subtitle: "The hybrid profile you need",
-                ambition_text: "Why hire a standard profile when you can have a hybrid? My <strong>Project Management</strong> background ensures I know how to deliver (Delivery). My <strong>Entrepreneurial</strong> experience ensures I understand business and customers (Discovery). I am ready to learn your specific framework, but I bring autonomy, rigor, and energy from day one.",
+                ambition_subtitle: "Operational and ready to learn",
+                ambition_text: "As a junior profile, I am fully aware that I still have things to learn about product frameworks deployed at scale. However, my experiences in <strong>Project Management</strong> and <strong>Entrepreneurship</strong> have already given me the right reflexes: <strong>structuring a need, prioritizing value (MVP), analyzing numerical data, and aligning teams</strong>. I am ready to adopt your methods and bring my energy from day one.",
                 
-                section_faq_title: "FAQ",
-                section_faq_subtitle: "Logistical details anticipated",
+                section_faq_title: "LOGISTICAL FAQ",
+                section_faq_subtitle: "To facilitate our discussions",
                 faq_q1: "When are you available?",
                 faq_a1: "I will graduate from my Master 2 and finish my apprenticeship contract in late June. I am <strong>available from early July 2026</strong>.",
                 faq_q2: "What is your geographic mobility?",
-                faq_a2: "I primarily target <strong>Valenciennes and its surroundings</strong> as well as <strong>Lille metropolitan area</strong>. I am also open to opportunities in <strong>Paris</strong>. I have a car.",
+                faq_a2: "I primarily target <strong>Valenciennes and its surroundings</strong> as well as the <strong>Lille metropolitan area</strong>. I am open to opportunities in <strong>Paris</strong>. I have a car.",
                 faq_q3: "What type of contract are you looking for?",
-                faq_a3: "I am looking for a <strong>Permanent Contract (CDI)</strong> to invest myself long-term as a Product Owner, Product Manager, or Digital Project Manager.",
+                faq_a3: "I am looking for a <strong>Permanent Contract (CDI)</strong> to invest myself long-term as a Junior Product Manager, Product Owner, or Digital Project Manager.",
                 faq_q4: "Remote Work: Full or Hybrid?",
-                faq_a4: "Both work for me. I have a <strong>complete and ergonomic setup</strong> (Standing desk, boom mic, dual monitors) for optimal productivity.",
+                faq_a4: "Both modalities suit me. I have an <strong>equipped workspace</strong> (Standing desk, dual monitors) allowing me to be fully operational remotely.",
                 faq_q5: "What are your salary expectations?",
-                faq_a5: "Open to discussion depending on the global package and responsibilities, aligned with the market for Master 2 IAE profiles with 3 years of apprenticeship + entrepreneurship experience.",
+                faq_a5: "I am open to discussion depending on the global package, aligned with the market for graduating Master 2 profiles with about 3 years of cumulative experience (apprenticeship and entrepreneurial projects).",
 
-                final_title: "Final Word",
-                final_text: "I am ready to put my energy and skills to work for your product. My hybrid path is my strength: I understand projects, I master data, and I have an entrepreneurial spirit. Let's meet to discuss how I can contribute to your success.",
+                final_title: "Conclusion",
+                final_text: "Theory is a foundation, but it's in the field that a product succeeds or fails. My background has taught me to be methodical with data and pragmatic with goals. I would be delighted to discuss your current product challenges with you.",
 
                 footer_title: "Let's Build Together",
                 footer_copyright: "© 2026 Florian Bouchart • Portfolio"
@@ -2276,38 +2320,34 @@
         // DETAILS POUR POPUP (Le texte explicatif détaillé)
         const detailsData = {
             fr: {
-                force_1: "Je comprends les contraintes techniques, les enjeux business et les besoins utilisateurs. Je sers de traducteur pour aligner tout le monde.",
-                force_2: "Je sais arbitrer. Dans un projet, tout est important, mais tout n'est pas urgent. Je priorise ce qui apporte le plus de valeur immédiate.",
-                force_3: "J'ai dirigé des bénévoles (BDE) et des joueurs (E-sport). On ne les manage pas par l'ordre, mais par l'adhésion à une vision commune.",
-                force_4: "Je n'attends pas qu'on me tienne la main. J'ai créé ma boîte, mon site, mes partenariats. Je sais me débrouiller et trouver des solutions.",
-                force_5: "Je ne fais pas pour faire. Je fais pour obtenir un résultat mesurable (ROI, Satisfaction, Adoption).",
-                force_6: "Je sais synthétiser des informations complexes pour permettre aux décideurs de trancher rapidement.",
+                force_1: "Grâce à mon cursus et mes projets, je sais comprendre les enjeux de rentabilité (Business), les contraintes de faisabilité (Tech) et les attentes réelles (Utilisateur) pour trouver le meilleur compromis.",
+                force_2: "Dans un environnement contraint (temps, budget), je sais me focaliser sur l'essentiel. Je raisonne en Produit Minimum Viable (MVP) pour tester rapidement une hypothèse sur le marché.",
+                force_3: "Mes expériences associatives m'ont appris qu'on ne dirige pas par l'ordre, mais par l'adhésion. Je sais embarquer une équipe et communiquer la vision produit.",
+                force_4: "Habitué à gérer des projets de A à Z (Desrèves), je n'attends pas qu'on me donne la solution. Je cherche, je teste, j'échoue et j'itère rapidement.",
+                force_5: "Je sais adapter mon discours à mon interlocuteur : synthétique pour un décideur, orienté besoin pour un client, et structuré pour une équipe technique.",
                 
-                weak_1: "En tant que prestataire ou chef de projet, j'ai l'habitude de satisfaire le client à tout prix. En Produit, je dois apprendre à dire 'Non' pour protéger la roadmap et la vision.",
-                weak_2: "L'entrepreneur en moi veut parfois corriger le problème tout de suite. Je travaille à ralentir pour passer plus de temps à analyser le problème avant de sauter sur la solution.",
-                weak_3: "Je peux échanger avec les devs, comprendre les API et la structure, mais je m'appuie sur leur expertise pour la faisabilité technique profonde.",
-                weak_4: "Passer d'une culture du 'Livrable' (Projet) à une culture de 'l'Impact' (Produit). Ce n'est pas parce que c'est codé que c'est une réussite, il faut que ce soit utilisé.",
-                weak_5: "L'entrepreneuriat est rapide. Les grands produits demandent du temps. Je canalise mon énergie pour accepter les cycles de validation nécessaires.",
-                weak_6: "Ayant souvent tout fait tout seul (solopreneur), je dois me discipliner pour déléguer efficacement et faire confiance au process de l'équipe."
+                weak_1: "Issu de la gestion de projet client, j'ai eu le réflexe d'essayer de satisfaire toutes les demandes. Je dois m'entraîner à dire 'Non' (ou 'Plus tard') avec tact pour préserver la roadmap.",
+                weak_2: "Le côté entrepreneur pousse parfois à vouloir corriger vite. Je travaille ma posture d'écoute pour m'assurer que le problème est bien identifié avant de proposer des fonctionnalités.",
+                weak_3: "Si je comprends l'architecture web (Front/Back) et sais interroger une API, je ne suis pas ingénieur. Je dois collaborer étroitement avec les Tech Leads pour estimer la complexité technique.",
+                weak_4: "J'ai la maîtrise théorique des méthodes Agiles et je les applique à petite échelle. Mon défi est maintenant de les pratiquer au sein de grandes squads de développement.",
+                weak_5: "Ayant souvent eu la casquette 'couteau suisse', je dois apprendre à lâcher prise sur l'opérationnel pur pour me concentrer sur mon rôle de pilotage et faire confiance à l'équipe de réalisation."
             },
             en: {
-                force_1: "I understand technical constraints, business stakes, and user needs. I act as a translator to align everyone.",
-                force_2: "I know how to arbitrate. In a project, everything is important, but not everything is urgent. I prioritize immediate value.",
-                force_3: "I led volunteers (Student Union) and players (E-sport). You don't manage them by order, but by adherence to a common vision.",
-                force_4: "I don't wait to be held by the hand. I created my company, my site, my partnerships. I know how to figure things out.",
-                force_5: "I don't do things just to do them. I do them to get a measurable result (ROI, Satisfaction, Adoption).",
-                force_6: "I know how to synthesize complex information to allow decision-makers to decide quickly.",
+                force_1: "Through my background, I understand profitability stakes (Business), feasibility constraints (Tech), and real expectations (User) to find the best compromise.",
+                force_2: "In a constrained environment (time, budget), I focus on the essential. I think in terms of Minimum Viable Product (MVP) to quickly test an assumption on the market.",
+                force_3: "My volunteering experiences taught me that you don't lead by giving orders, but by gaining buy-in. I know how to bring a team on board and communicate the product vision.",
+                force_4: "Used to managing projects from A to Z (Desrèves), I don't wait for solutions. I search, I test, I fail, and I iterate quickly.",
+                force_5: "I know how to adapt my message: synthetic for a decision-maker, needs-oriented for a client, and structured for a technical team.",
                 
-                weak_1: "As a project manager/provider, I'm used to satisfying the client at all costs. In Product, I must learn to say 'No' to protect the roadmap and vision.",
-                weak_2: "The entrepreneur in me wants to fix the problem right away. I work on slowing down to spend more time analyzing the problem before jumping to the solution.",
-                weak_3: "I can talk to devs, understand APIs and structure, but I rely on their expertise for deep technical feasibility.",
-                weak_4: "Moving from a 'Deliverable' culture (Project) to an 'Impact' culture (Product). Just because it's coded doesn't mean it's a success; it has to be used.",
-                weak_5: "Entrepreneurship is fast. Great products take time. I channel my energy to accept the necessary validation cycles.",
-                weak_6: "Having often done everything alone (solopreneur), I must discipline myself to delegate effectively and trust the team's process."
+                weak_1: "Coming from client project management, my reflex was to try and satisfy all requests. I need to practice saying 'No' (or 'Later') tactfully to protect the roadmap.",
+                weak_2: "The entrepreneurial side sometimes pushes me to want to fix things quickly. I am working on my listening posture to ensure the problem is well identified before suggesting features.",
+                weak_3: "While I understand web architecture (Front/Back) and know how to query an API, I am not an engineer. I must collaborate closely with Tech Leads to estimate technical complexity.",
+                weak_4: "I have theoretical mastery of Agile methods and apply them on a small scale. My challenge now is to practice them within large development squads.",
+                weak_5: "Having often worn the 'Swiss Army knife' hat, I must learn to let go of pure operations to focus on my steering role and trust the delivery team."
             }
         };
 
-        // DONNÉES ACADÉMIQUES (TIMELINE COMPLÈTE - RESTAURÉE)
+        // DONNÉES ACADÉMIQUES (TIMELINE COMPLÈTE)
         const academicData = {
             fr: [
                 {
@@ -2446,7 +2486,7 @@
                             courses: [
                                 'Diagnostic éthique et écologique',
                                 'Management durable',
-                                'Business English (TOEIC)',
+                                'Business English (+TOEIC)',
                                 'Semaine internationale',
                                 'Développer capacités de transfert'
                             ]
@@ -2743,7 +2783,7 @@
                             courses: [
                                 'Ethical & Ecological Diagnosis',
                                 'Sustainable Management',
-                                'Business English (TOEIC)',
+                                'Business English (+TOEIC)',
                                 'International Week',
                                 'Developing Transfer Capabilities'
                             ]
